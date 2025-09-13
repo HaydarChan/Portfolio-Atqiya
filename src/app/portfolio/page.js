@@ -10,6 +10,7 @@ import Mock6 from "@/assets/mockup/6.png";
 import Mock7 from "@/assets/mockup/7.png";
 import SplitText from '@/components/SplitText';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function PortfolioPage() {
     const router = useRouter();
@@ -183,7 +184,7 @@ export default function PortfolioPage() {
                         transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                     >
                         <div className="relative">
-                            <img src={project.thumbnail} alt={project.name} className="w-full aspect-square object-cover" />
+                            <Image src={project.thumbnail} alt={project.name} className="w-full aspect-square object-cover" />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
                         </div>
                         <div className="p-4">
