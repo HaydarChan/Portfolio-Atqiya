@@ -139,7 +139,7 @@ export default function Home() {
             >
               <a href="/portfolio">
                 <motion.button 
-                  className="w-full sm:w-auto flex items-center justify-center gap-x-[12px] hover:gap-x-[24px] transition-all rounded-full font-medium px-[20px] sm:px-[24px] py-[10px] sm:py-[12px] cursor-pointer rounded-full bg-[#1c1c1c] text-white text-[18px] sm:text-[20px]"
+                  className="w-full sm:w-auto flex items-center justify-center gap-x-[12px] transition-all rounded-full font-medium px-[20px] sm:px-[24px] py-[10px] sm:py-[12px] cursor-pointer rounded-full bg-[#1c1c1c] text-white text-[18px] sm:text-[20px]"
                   whileHover={{ 
                     scale: 1.05,
                     y: -2,
