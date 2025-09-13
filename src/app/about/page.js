@@ -1,0 +1,111 @@
+'use client'
+import AboutMe from "@/assets/About Me.png"
+import { Instagram, Linkedin, ExternalLink, ArrowLeft } from 'lucide-react'
+import { useRouter } from "next/navigation"
+import Image from "next/image"
+
+const WorkExperiences = [
+    { id: 1, position: "UI/UX Designer Intern", company: "Datare", year: 2023 },
+    { id: 2, position: "Frontend Developer Intern", company: "Purple Foxes Italy", year: 2024 },
+    { id: 3, position: "Software Engineering Laboratory Assistant", company: "School of Electrical Engineering and Informatics ITB", year: 2024 },
+    { id: 4, position: "Frontend Developer Intern", company: "Sinergi Merah Putih", year: 2025 },
+    { id: 5, position: "Lead Product Design", company: "Inkubator IT", year: 2025 },
+]
+
+const Certifications = [
+    { id: 1, certification: "Google UX Design Specialization", issuer: "Google", url: "https://www.coursera.org/account/accomplishments/specialization/LJ0VBWWO1K1R" },
+    { id: 2, certification: "Software Engineering Academy", issuer: "COMPFEST 16", url: "https://asset.compfest.id/certificate/cf-2024-b44224a4-3ced-46d8-85ce-a8d2985086fc/cf-2024-b44224a4-3ced-46d8-85ce-a8d2985086fc.pdf" }
+]
+
+export default function AboutMePage() {
+    const router = useRouter();
+
+    return (
+        <div className='text-[#1C1C1C] w-full h-full flex flex-col items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative'>
+            <button 
+                onClick={() => router.push('/')}
+                className="fixed top-4 sm:top-8 left-4 sm:left-8 flex items-center gap-x-[12px] hover:gap-x-[24px] transition-all rounded-full font-medium px-[16px] sm:px-[24px] py-[10px] sm:py-[12px] cursor-pointer rounded-full bg-gray-100 text-[#1c1c1c] text-[16px] sm:text-[20px] z-10"
+            >
+                <ArrowLeft size={20} className='text-gray-500' />
+                <span className='text-[16px] font-medium text-gray-600'>Back to Home</span>
+            </button>
+            <div className="w-full flex flex-col items-center max-w-3xl gap-8 px-4">
+                <Image src={AboutMe} alt="My Photo" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full" />
+                <p className="text-base sm:text-lg leading-relaxed text-gray-500 text-center tracking-[-0.04em] px-2 sm:px-0"><span className="font-caveat text-xl">Hi, </span> I'm Atqiya Haydar! I'm a final-year Computer Science student at ITB (one of Indonesia's top 3 universities). I'm passionate about creating beautiful, user-centered digital experiences through product design and front-end engineering.</p>
+                <div className="flex items-center gap-6">
+                    <a 
+                        href="https://www.instagram.com/atqiyahaydar/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-110 transition-all duration-200"
+                    >
+                        <Instagram size={24} />
+                    </a>
+                    <a 
+                        href="https://www.linkedin.com/in/atqiyahaydar/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-110 transition-all duration-200"
+                    >
+                        <Linkedin size={24} />
+                    </a>
+                </div>  
+            </div> 
+            <div className="w-full flex flex-col items-center px-4 gap-8 max-w-3xl">
+                <h3 className="text-[#1c1c1c] font-medium text-xl [text-shadow:0_0_24px_rgba(0,0,0,0.24)] tracking-[-0.04em]">Work Experiences</h3>
+                <div className="flex flex-col items-center gap-y-4 w-full">
+                    {WorkExperiences.sort((a, b) => b.year - a.year).map((experience) => (
+                        <div 
+                            key={experience.id}
+                            className="w-full flex justify-between items-center py-2 border-b border-gray-100"
+                        >
+                            <div className="flex flex-col">
+                                <h4 className="text-base sm:text-lg text-gray-800 font-medium tracking-[-0.04em]">
+                                    {experience.position}
+                                </h4>
+                                <p className="text-gray-600 text-xs sm:text-sm">
+                                    {experience.company}
+                                </p>
+                            </div>
+                            <div className="text-right">
+                                <span className="text-gray-500 text-xs sm:text-sm font-medium">
+                                    {experience.year}
+                                </span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>   
+            <div className="w-full flex flex-col items-center px-4 gap-8 max-w-3xl">
+                <h3 className="text-[#1c1c1c] font-medium text-xl [text-shadow:0_0_24px_rgba(0,0,0,0.24)] tracking-[-0.04em]">Certifications</h3>
+                <div className="flex flex-col items-center gap-y-4 w-full">
+                    {Certifications.map((cert) => (
+                        <div 
+                            key={cert.id}
+                            className="w-full flex justify-between items-center py-2 border-b border-gray-100"
+                        >
+                            <div className="flex flex-col">
+                                <h4 className="text-base sm:text-lg text-gray-800 font-medium tracking-[-0.04em]">
+                                    {cert.certification}
+                                </h4>
+                                <p className="text-gray-600 text-xs sm:text-sm">
+                                    {cert.issuer}
+                                </p>
+                            </div>
+                            <a 
+                                href={cert.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-500 hover:text-gray-700 p-2"
+                                aria-label={`View credential for ${cert.certification}`}
+                                title="View credential"
+                            >
+                                <ExternalLink size={18} />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}

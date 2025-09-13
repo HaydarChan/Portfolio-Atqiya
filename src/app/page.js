@@ -153,7 +153,7 @@ export default function Home() {
                   View My Work <BriefcaseBusiness className='w-[24px] h-[24px]' />
                 </motion.button>
               </a>
-              <a href="/about-me">
+              <a href="/about">
                 <motion.button 
                   className="w-full sm:w-auto flex items-center justify-center gap-x-[12px] transition-all rounded-full font-medium px-[20px] sm:px-[24px] py-[10px] sm:py-[12px] cursor-pointer rounded-full bg-gray-100 text-[#1c1c1c] text-[18px] sm:text-[20px]"
                   whileHover={{ 
