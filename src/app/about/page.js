@@ -76,7 +76,15 @@ export default function AboutMePage() {
                 <span className='text-[16px] font-medium text-gray-600'>Back to Home</span>
             </button>
             <motion.div variants={profileVariants} className="w-full flex flex-col items-center max-w-3xl gap-8 px-4">
-                <Image src={AboutMe} alt="My Photo" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full" />
+                <motion.div
+                    whileHover={{
+                        scale: 1.05,
+                        rotate: 2,
+                        transition: { duration: 0.3 }
+                    }}
+                >
+                    <Image src={AboutMe} alt="My Photo" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full" />
+                </motion.div>
                 <p className="text-base sm:text-lg leading-relaxed text-gray-500 text-center tracking-[-0.04em] px-2 sm:px-0"><span className="font-caveat text-xl">Hi, </span> I'm Atqiya Haydar! I'm a final-year Computer Science student at ITB (one of Indonesia's top 3 universities). I'm passionate about creating beautiful, user-centered digital experiences through product design and front-end engineering.</p>
                 <div className="flex items-center gap-6">
                     <a 
