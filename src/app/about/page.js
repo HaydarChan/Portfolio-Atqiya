@@ -1,6 +1,6 @@
 'use client'
 import AboutMe from "@/assets/About Me.png"
-import { Instagram, Linkedin, ExternalLink, ArrowLeft } from 'lucide-react'
+import { Instagram, Linkedin, ExternalLink, ArrowLeft, Twitter } from 'lucide-react'
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -96,12 +96,12 @@ export default function AboutMePage() {
                         <Instagram size={24} />
                     </a>
                     <a 
-                        href="https://www.instagram.com/uxqiy/" 
+                        href="https://x.com/uxqiy_" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-110 transition-all duration-200"
                     >
-                        <Instagram size={24} />
+                        <Twitter size={24} />
                     </a>
                     <a 
                         href="https://www.linkedin.com/in/atqiyahaydar/" 
