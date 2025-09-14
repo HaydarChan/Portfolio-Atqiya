@@ -47,7 +47,7 @@ export default function PortfolioPage() {
         },
         {
             id: 5,
-            name: "Ainstein",
+            name: "Purritify",
             thumbnail: Mock6,
             images: [Mock6, Mock2, Mock4],
             description: "Spotify clone app Find music that fits your mood, every time."
@@ -202,6 +202,53 @@ export default function PortfolioPage() {
                     <GalleryParallax project={activeProject} onClose={() => setActiveProject(null)} />
                 )}
             </AnimatePresence>
+
+            <motion.div 
+                className="w-full max-w-4xl text-center mt-16 mb-20"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ 
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 60,
+                    damping: 12
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+            >
+                <h2 className="text-[28px] font-bold tracking-[-0.03em] text-[#1c1c1c] mb-4">
+                    Ready to Create Something Amazing?
+                </h2>
+                <p className="text-[18px] text-gray-500 mb-8 max-w-2xl mx-auto">
+                    Let's turn your ideas into reality. I'm always excited to collaborate on meaningful projects that make a difference.
+                </p>
+                <motion.button
+                    className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#1c1c1c] text-white rounded-full font-medium text-[16px] overflow-hidden cursor-pointer"
+                    whileHover={{ 
+                        scale: 1.05,
+                        transition: { duration: 0.2 }
+                    }}
+                    whileTap={{ 
+                        scale: 0.95,
+                        transition: { duration: 0.1 }
+                    }}
+                    onClick={() => router.push("/contact")}
+                >
+                    <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"
+                        initial={{ x: '-100%' }}
+                        whileHover={{ x: '0%' }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                    />
+                    <span className="relative z-10">Let's Collaborate</span>
+                    <motion.div
+                        className="relative z-10 w-5 h-5 rounded-full border-2 border-current flex items-center justify-center"
+                        whileHover={{ rotate: 45 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        <div className="w-2 h-2 bg-current rounded-full" />
+                    </motion.div>
+                </motion.button>
+            </motion.div>
         </div>
     )
 }

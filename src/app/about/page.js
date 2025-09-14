@@ -88,7 +88,15 @@ export default function AboutMePage() {
                 <p className="text-base sm:text-lg leading-relaxed text-gray-500 text-center tracking-[-0.04em] px-2 sm:px-0"><span className="font-caveat text-xl">Hi, </span> I'm Atqiya Haydar! I'm a final-year Computer Science student at ITB (one of Indonesia's top 3 universities). I'm passionate about creating beautiful, user-centered digital experiences through product design and front-end engineering.</p>
                 <div className="flex items-center gap-6">
                     <a 
-                        href="https://www.instagram.com/atqiyahaydar/" 
+                        href="https://www.instagram.com/uxqiy/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-110 transition-all duration-200"
+                    >
+                        <Instagram size={24} />
+                    </a>
+                    <a 
+                        href="https://www.instagram.com/uxqiy/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-110 transition-all duration-200"
