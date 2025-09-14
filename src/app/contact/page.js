@@ -317,13 +317,13 @@ export default function ContactPage() {
                         Or reach out directly at
                     </p>
                     <motion.a 
-                        href="mailto:your-email@example.com"
+                        href="mailto:atqiyahaydar15@gmail.com"
                         className='inline-flex items-center gap-2 text-[#1c1c1c] font-medium hover:text-blue-600 transition-colors'
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
                         <Mail size={18} />
-                        your-email@example.com
+                        atqiyahaydar15@gmail.com
                     </motion.a>
                 </motion.div>
             </motion.div>
