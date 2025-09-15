@@ -125,7 +125,7 @@ export default function PortfolioPage() {
     }
 
     return (
-        <div className='text-[#1C1C1C] w-full h-full flex flex-col items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative'>
+        <div className='text-[#1C1C1C] bg-white w-full h-full flex flex-col items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative'>
             <motion.button
                 onClick={() => router.push('/')}
                 className="fixed top-8 left-8 flex items-center gap-x-[12px] transition-all rounded-full font-medium px-[24px] py-[12px] cursor-pointer rounded-full bg-gray-100 text-[#1c1c1c] text-[20px] z-10"
@@ -145,7 +145,7 @@ export default function PortfolioPage() {
             <div className='text-center text-[#1c1c1c] flex flex-col items-center'>
                 <SplitText
                     text="Projects I've Brought to Life"
-                    className="text-[36px] font-bold tracking-[-0.04em] [text-shadow:0_0_24px_rgba(0,0,0,0.24)]"
+                    className="text-[36px] font-bold tracking-[-0.04em] [text-shadow:0_0_24px_rgba(0,0,0,0.24)] text-[#1c1c1c]"
                     delay={28}
                     duration={0.6}
                     ease="power3.out"
@@ -239,7 +239,7 @@ export default function PortfolioPage() {
                         whileHover={{ x: '0%' }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                     />
-                    <span className="relative z-10">Let's Collaborate</span>
+                    <span className="relative z-10 text-white">Let's Collaborate</span>
                     <motion.div
                         className="relative z-10 w-5 h-5 rounded-full border-2 border-current flex items-center justify-center"
                         whileHover={{ rotate: 45 }}

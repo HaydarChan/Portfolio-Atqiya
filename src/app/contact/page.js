@@ -1,8 +1,9 @@
 'use client'
-import { ArrowLeft, Send, Mail, MessageSquare, User, CheckCircle, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Send, Mail, MessageSquare, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { toast } from 'sonner';
 import SplitText from '@/components/SplitText';
 
 export default function ContactPage() {
@@ -13,7 +14,6 @@ export default function ContactPage() {
         subject: '',
         message: ''
     });
-    const [status, setStatus] = useState({ type: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleInputChange = (e) => {
@@ -27,7 +27,6 @@ export default function ContactPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setStatus({ type: '', message: '' });
 
         try {
             const response = await fetch('/api/contact', {
@@ -41,9 +40,9 @@ export default function ContactPage() {
             const result = await response.json();
 
             if (response.ok) {
-                setStatus({ 
-                    type: 'success', 
-                    message: 'Message sent successfully! I\'ll get back to you soon.' 
+                toast.success('Message sent successfully!', {
+                    description: "I'll get back to you soon.",
+                    duration: 4000,
                 });
                 setFormData({
                     name: '',
@@ -52,15 +51,15 @@ export default function ContactPage() {
                     message: ''
                 });
             } else {
-                setStatus({ 
-                    type: 'error', 
-                    message: result.message || 'Failed to send message. Please try again.' 
+                toast.error('Failed to send message', {
+                    description: result.message || 'Please try again.',
+                    duration: 4000,
                 });
             }
         } catch (error) {
-            setStatus({ 
-                type: 'error', 
-                message: 'Network error. Please check your connection and try again.' 
+            toast.error('Network error', {
+                description: 'Please check your connection and try again.',
+                duration: 4000,
             });
         } finally {
             setIsSubmitting(false);
@@ -96,7 +95,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className='text-[#1C1C1C] w-full h-full flex flex-col items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative min-h-screen'>
+        <div className='text-[#1C1C1C] w-full h-full flex flex-col bg-white items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative min-h-screen'>
             <motion.button
                 onClick={() => router.push('/')}
                 className="fixed top-8 left-8 flex items-center gap-x-[12px] transition-all rounded-full font-medium px-[24px] py-[12px] cursor-pointer rounded-full bg-gray-100 text-[#1c1c1c] text-[20px] z-10"
@@ -127,7 +126,7 @@ export default function ContactPage() {
                 >
                     <SplitText
                         text="Let's Work Together"
-                        className="text-[36px] md:text-[48px] font-bold tracking-[-0.04em] [text-shadow:0_0_24px_rgba(0,0,0,0.24)] mb-4"
+                        className="text-[36px] md:text-[48px] text-[#1c1c1c] font-bold tracking-[-0.04em] [text-shadow:0_0_24px_rgba(0,0,0,0.24)] mb-4"
                         delay={28}
                         duration={0.6}
                         ease="power3.out"
@@ -154,31 +153,6 @@ export default function ContactPage() {
                     </motion.p>
                 </motion.div>
 
-                {/* Status Message */}
-                <AnimatePresence>
-                    {status.message && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                            className={`w-full max-w-2xl mx-auto mb-8 p-4 rounded-xl border-2 ${
-                                status.type === 'success' 
-                                    ? 'bg-green-50 border-green-200 text-green-800' 
-                                    : 'bg-red-50 border-red-200 text-red-800'
-                            }`}
-                        >
-                            <div className='flex items-center gap-3'>
-                                {status.type === 'success' ? (
-                                    <CheckCircle size={20} className='text-green-600' />
-                                ) : (
-                                    <AlertCircle size={20} className='text-red-600' />
-                                )}
-                                <p className='font-medium'>{status.message}</p>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-
                 {/* Contact Form */}
                 <motion.div 
                     className='w-full max-w-2xl mx-auto'
@@ -202,7 +176,7 @@ export default function ContactPage() {
                                     onChange={handleInputChange}
                                     required
                                     disabled={isSubmitting}
-                                    className='w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed'
+                                    className='w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed'
                                     placeholder='Your name'
                                 />
                             </motion.div>
@@ -222,7 +196,7 @@ export default function ContactPage() {
                                     onChange={handleInputChange}
                                     required
                                     disabled={isSubmitting}
-                                    className='w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed'
+                                    className='w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed'
                                     placeholder='your@email.com'
                                 />
                             </motion.div>
@@ -244,7 +218,7 @@ export default function ContactPage() {
                                 onChange={handleInputChange}
                                 required
                                 disabled={isSubmitting}
-                                className='w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed'
+                                className='w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed'
                                 placeholder='What would you like to discuss?'
                             />
                         </motion.div>
@@ -265,7 +239,7 @@ export default function ContactPage() {
                                 required
                                 disabled={isSubmitting}
                                 rows={6}
-                                className='w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors resize-none bg-white disabled:opacity-50 disabled:cursor-not-allowed'
+                                className='w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1c1c1c] focus:outline-none transition-colors resize-none bg-white disabled:opacity-50 disabled:cursor-not-allowed'
                                 placeholder='Tell me about your project, ideas, or just say hello!'
                             />
                         </motion.div>
@@ -293,11 +267,11 @@ export default function ContactPage() {
                                     whileHover={isSubmitting ? {} : { x: '0%' }}
                                     transition={{ duration: 0.3, ease: "easeOut" }}
                                 />
-                                <span className="relative z-10">
+                                <span className="relative z-10 text-white">
                                     {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </span>
                                 <motion.div
-                                    className="relative z-10"
+                                    className="relative z-10 text-white"
                                     animate={isSubmitting ? { rotate: 360 } : {}}
                                     transition={isSubmitting ? { duration: 1, repeat: Infinity, ease: "linear" } : {}}
                                 >

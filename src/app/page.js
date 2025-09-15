@@ -73,7 +73,7 @@ export default function Home() {
   };
 
   return (
-    <div className='text-[#1C1C1C] w-full h-full flex flex-col items-center'>
+    <div className='text-[#1C1C1C] w-full h-full flex flex-col items-center bg-white'>
         <motion.div 
           className='w-full h-screen flex flex-col justify-center items-center gap-y-[40px] px-4'
           variants={containerVariants}
@@ -94,7 +94,7 @@ export default function Home() {
               <Image src={ProfilePhoto} alt="My Profile Photo" className="w-[175px] h-[175px] rounded-full" />
             </motion.div>
             <motion.p 
-              className='text-[32px] font-caveat mt-4'
+              className='text-[32px] font-caveat mt-4 text-[#1c1c1c]'
               variants={textVariants}
             >
               Hi, I'm Qy
@@ -107,7 +107,7 @@ export default function Home() {
             <div className='flex flex-col gap-y-[12px] text-center items-center text-[#1C1C1C]'>
               <SplitText
                 text="Creating user-first designs and scalable front-end systems that drive results"
-                className="text-[28px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold max-w-[1200px] tracking-[-0.04em] [text-shadow:0_0_24px_rgba(0,0,0,0.24)]"
+                className="text-[28px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold max-w-[1200px] tracking-[-0.04em] [text-shadow:0_0_24px_rgba(0,0,0,0.24)] text-[#1c1c1c]"
                 delay={28}
                 duration={0.6}
                 ease="power3.out"

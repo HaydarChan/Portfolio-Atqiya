@@ -67,7 +67,7 @@ export default function AboutMePage() {
     }
 
     return (
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className='text-[#1C1C1C] w-full h-full flex flex-col items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative'>
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className='text-[#1C1C1C] bg-white w-full h-full flex flex-col items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative'>
             <button 
                 onClick={() => router.push('/')}
                 className="fixed top-4 sm:top-8 left-4 sm:left-8 flex items-center gap-x-[12px] hover:gap-x-[24px] transition-all rounded-full font-medium px-[16px] sm:px-[24px] py-[10px] sm:py-[12px] cursor-pointer rounded-full bg-gray-100 text-[#1c1c1c] text-[16px] sm:text-[20px] z-10"
