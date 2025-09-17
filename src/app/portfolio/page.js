@@ -1,6 +1,6 @@
 'use client'
 import { ArrowLeft } from 'lucide-react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { useMemo, useRef, useState } from 'react';
 import Mock2 from "@/assets/mockup/2.png";
 import Mock3 from "@/assets/mockup/3.png";
@@ -11,6 +11,7 @@ import Mock7 from "@/assets/mockup/7.png";
 import SplitText from '@/components/SplitText';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { mockupData } from '@/lib/Mockups';
 
 export default function PortfolioPage() {
     const router = useRouter();
@@ -21,35 +22,30 @@ export default function PortfolioPage() {
             id: 1,
             name: "Hentii",
             thumbnail: Mock2,
-            images: [Mock2, Mock3, Mock4],
             description: "Mobile Application to Accompany Users in the Process of Quitting Smoking Gradually, Healthily, and Sustainably."
         },
         {
             id: 2,
             name: "Obatku",
             thumbnail: Mock3,
-            images: [Mock3, Mock5, Mock6],
             description: "An application that makes it easier for you to manage your medication and provides better self-medication guidance."
         },
         {
             id: 3,
             name: "EcoTrail",
             thumbnail: Mock4,
-            images: [Mock4, Mock2, Mock7],
             description: "Green Transportation App and Carbon Emission Tracker"
         },
         {
             id: 4,
             name: "Ainstein",
             thumbnail: Mock5,
-            images: [Mock5, Mock6, Mock3],
             description: "An app that can turn any topic into an intelligent learning experience with AI-generated lessons, quizzes, and videos.."
         },
         {
             id: 5,
             name: "Purritify",
             thumbnail: Mock6,
-            images: [Mock6, Mock2, Mock4],
             description: "Spotify clone app Find music that fits your mood, every time."
         },
         {
@@ -64,9 +60,6 @@ export default function PortfolioPage() {
     function GalleryParallax({ project, onClose }) {
         const containerRef = useRef(null);
         const { scrollYProgress } = useScroll({ container: containerRef });
-        const ySlow = useTransform(scrollYProgress, [0, 1], [0, -40]);
-        const yMedium = useTransform(scrollYProgress, [0, 1], [0, -80]);
-        const yFast = useTransform(scrollYProgress, [0, 1], [0, -120]);
 
         return (
             <AnimatePresence>
@@ -90,7 +83,7 @@ export default function PortfolioPage() {
                         exit={{ scale: 0.98, opacity: 0 }}
                         transition={{ type: 'spring', stiffness: 120, damping: 16 }}
                     >
-                        <div className="relative w-full max-w-5xl h-[70vh] rounded-2xl bg-white overflow-hidden">
+                        <div className="relative w-full max-w-7xl h-[70vh] rounded-2xl bg-white overflow-hidden">
                             <div ref={containerRef} className="w-full h-full overflow-y-auto">
                                 <div className="p-6 flex items-start justify-between sticky top-0 bg-white/80 backdrop-blur-sm z-10 border-b gap-4">
                                     <div className="flex-1 min-w-0">
@@ -101,21 +94,30 @@ export default function PortfolioPage() {
                                     </div>
                                     <button onClick={onClose} className="px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 text-[#1c1c1c]">Close</button>
                                 </div>
-                                <div className="relative p-6 space-y-6">
-                                    {project.images.map((src, idx) => {
-                                        const y = idx % 3 === 0 ? ySlow : idx % 3 === 1 ? yMedium : yFast;
-                                        return (
-                                            <motion.div
-                                                key={idx}
-                                                style={{ y }}
-                                                className="w-full overflow-hidden rounded-xl border border-gray-100 bg-gray-50"
-                                            >
-                                                <img src={src} alt={`preview-${idx}`} className="w-full h-[260px] object-cover" />
-                                            </motion.div>
-                                        )
-                                    })}
-                                    <div className="h-2" />
-                                </div>
+                                <div
+                                    className={`relative p-6 gap-6 ${
+                                        project.name === "Trackure"
+                                        ? "grid grid-cols-1"
+                                        : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                                    }`}
+                                    >
+                                    {mockupData
+                                        .find((m) => m.label === project.name)
+                                        ?.mockup.slice().reverse().map((src, idx) => (
+                                        <div
+                                            key={`${project.name}-${idx}`}
+                                            className="w-full overflow-hidden rounded-xl border border-gray-100 bg-gray-50"
+                                        >
+                                            <Image
+                                            src={src}
+                                            alt={`${project.name}-preview-${idx}`}
+                                            className={`w-full object-fit ${
+                                                project.name === "Trackure" ? "h-[700px]" : "h-[640px]"
+                                            }`}
+                                            />
+                                        </div>
+                                        ))}
+                                    </div>
                             </div>
                         </div>
                     </motion.div>
