@@ -22,44 +22,48 @@ export default function PortfolioPage() {
             id: 1,
             name: "Hentii",
             thumbnail: Mock2,
-            description: "Mobile Application to Accompany Users in the Process of Quitting Smoking Gradually, Healthily, and Sustainably."
+            description: "Mobile Application to Accompany Users in the Process of Quitting Smoking Gradually, Healthily, and Sustainably.",
+            hasPrototype: true,
         },
         {
             id: 2,
             name: "Obatku",
             thumbnail: Mock3,
-            description: "An application that makes it easier for you to manage your medication and provides better self-medication guidance."
+            description: "An application that makes it easier for you to manage your medication and provides better self-medication guidance.",
+            hasPrototype: true,
         },
         {
             id: 3,
             name: "EcoTrail",
             thumbnail: Mock4,
-            description: "Green Transportation App and Carbon Emission Tracker"
+            description: "Green Transportation App and Carbon Emission Tracker",
+            hasPrototype: true,
         },
         {
             id: 4,
             name: "Ainstein",
             thumbnail: Mock5,
-            description: "An app that can turn any topic into an intelligent learning experience with AI-generated lessons, quizzes, and videos.."
+            description: "An app that can turn any topic into an intelligent learning experience with AI-generated lessons, quizzes, and videos..",
+            hasPrototype: true,
         },
         {
             id: 5,
             name: "Purritify",
             thumbnail: Mock6,
-            description: "Spotify clone app Find music that fits your mood, every time."
+            description: "Spotify clone app Find music that fits your mood, every time.",
+            hasPrototype: false,
         },
         {
             id: 6,
             name: "Trackure",
             thumbnail: Mock7,
-            images: [Mock7, Mock5, Mock2],
-            description: "An application that can Manage, Monitor, and Accelerate the Procurement of Goods & Services with a Transparent Tracking System that makes every process run efficiently."
+            description: "An application that can Manage, Monitor, and Accelerate the Procurement of Goods & Services with a Transparent Tracking System that makes every process run efficiently.",
+            hasPrototype: false,
         },
     ]), []);
 
     function GalleryParallax({ project, onClose }) {
         const containerRef = useRef(null);
-        const { scrollYProgress } = useScroll({ container: containerRef });
 
         return (
             <AnimatePresence>
