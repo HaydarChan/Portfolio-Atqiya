@@ -85,7 +85,14 @@ export default function AboutMePage() {
                 >
                     <Image src={AboutMe} alt="My Photo" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full" />
                 </motion.div>
-                <p className="text-base sm:text-lg leading-relaxed text-gray-500 text-center tracking-[-0.04em] px-2 sm:px-0"><span className="font-caveat text-xl">Hi, </span> I'm Atqiya Haydar! I'm a final-year Computer Science student at ITB (one of Indonesia's top 3 universities). I'm passionate about creating beautiful, user-centered digital experiences through product design and front-end engineering.</p>
+                <p className="text-base sm:text-lg leading-relaxed text-gray-500 text-center tracking-[-0.04em] px-2 sm:px-0">
+                    <span className="font-caveat text-xl">Hi, </span> 
+                    I'm Atqiya Haydar! I'm a final-year Computer Science student at ITB (one of Indonesia's top 3 universities). 
+                    I'm passionate about creating beautiful, user-centered digital experiences through product design and front-end engineering. 
+                    Beyond that, I’m also deeply interested in <span className="font-semibold text-gray-700">automation testing & QA</span>, 
+                    exploring the future of <span className="font-semibold text-gray-700">blockchain & Web3</span>, 
+                    and bringing ideas to life through <span className="font-semibold text-gray-700">motion design</span> and <span className="font-semibold text-gray-700">branding</span>.
+                </p>
                 <div className="flex items-center gap-6">
                     <a 
                         href="https://www.instagram.com/uxqiy/" 
