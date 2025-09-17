@@ -87,7 +87,7 @@ export default function PortfolioPage() {
                         exit={{ scale: 0.98, opacity: 0 }}
                         transition={{ type: 'spring', stiffness: 120, damping: 16 }}
                     >
-                        <div className="relative w-full max-w-7xl h-[70vh] rounded-2xl bg-white overflow-hidden">
+                        <div className="relative w-full max-w-7xl h-[90vh] rounded-2xl bg-white overflow-hidden">
                             <div ref={containerRef} className="w-full h-full overflow-y-auto">
                                 <div className="p-6 flex items-start justify-between sticky top-0 bg-white/80 backdrop-blur-sm z-10 border-b gap-4">
                                     <div className="flex-1 min-w-0">
