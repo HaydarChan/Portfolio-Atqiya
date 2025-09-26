@@ -196,15 +196,15 @@ export default function PortfolioPage() {
                     <h3 className='text-md text-[#1c1c1c] text-center text-gray-800 font-medium text-white'>UX Study Cases</h3>
                 </div>
                 <motion.div 
-                    className='w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6'
+                    className='w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6'
                     initial={{ scale: 0.75, opacity: 0.75 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <Link href="/study-case/obatku" target='_blank'>
+                    <Link href="/study-case/obatku" target='_blank' className='w-full'>
                         <motion.button
                             key={projects[1].id}
-                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer"
                             whileHover={{ y: -4 }}
                             transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                         >
@@ -218,10 +218,10 @@ export default function PortfolioPage() {
                             </div>
                         </motion.button>
                     </Link>
-                    <Link href="/study-case/ecotrail" target='_blank'>
+                    <Link href="/study-case/ecotrail" target='_blank' className='w-full'>
                         <motion.button
                             key={projects[1].id}
-                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer"
                             whileHover={{ y: -4 }}
                             transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                         >
@@ -244,7 +244,7 @@ export default function PortfolioPage() {
                     <h3 className='text-md text-[#1c1c1c] text-center text-gray-800 font-medium text-white'>Visual Designs</h3>
                 </div>
                 <motion.div 
-                    className='w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
+                    className='w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
                     initial={{ scale: 0.75, opacity: 0.75 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -278,14 +278,14 @@ export default function PortfolioPage() {
                     <h3 className='text-md text-[#1c1c1c] text-center text-gray-800 font-medium text-white'>Frontend Projects</h3>
                 </div>
                 <motion.div 
-                    className='w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6'
+                    className='w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6'
                     initial={{ scale: 0.75, opacity: 0.75 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <Link href="https://aruna-jaya.vercel.app/" target='_blank'>
+                    <Link href="https://aruna-jaya.vercel.app/" target='_blank' className='w-full'>
                         <motion.button
-                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer"
                             whileHover={{ y: -4 }}
                             transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                         >
@@ -301,9 +301,9 @@ export default function PortfolioPage() {
                             </div>
                         </motion.button>
                     </Link>
-                    <Link href="https://sea-salon-five.vercel.app/" target='_blank'>
+                    <Link href="https://sea-salon-five.vercel.app/" target='_blank' className='w-full'>
                         <motion.button
-                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer"
                             whileHover={{ y: -4 }}
                             transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                         >
