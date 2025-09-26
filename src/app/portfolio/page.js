@@ -1,7 +1,9 @@
 'use client'
-import { ArrowLeft } from 'lucide-react';
-import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { useMemo, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
 import Mock2 from "@/assets/mockup/2.png";
 import Mock3 from "@/assets/mockup/3.png";
 import Mock4 from "@/assets/mockup/4.png";
@@ -9,9 +11,9 @@ import Mock5 from "@/assets/mockup/5.png";
 import Mock6 from "@/assets/mockup/6.png";
 import Mock7 from "@/assets/mockup/7.png";
 import SplitText from '@/components/SplitText';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { mockupData } from '@/lib/Mockups';
+import ObatkuThumbnail from "@/assets/studycase/obatku/obatku-thumbnail.png"
+import Link from 'next/link';
 
 export default function PortfolioPage() {
     const router = useRouter();
@@ -24,6 +26,7 @@ export default function PortfolioPage() {
             thumbnail: Mock2,
             description: "Mobile Application to Accompany Users in the Process of Quitting Smoking Gradually, Healthily, and Sustainably.",
             hasPrototype: true,
+            hasStudyCase: false,
         },
         {
             id: 2,
@@ -31,6 +34,7 @@ export default function PortfolioPage() {
             thumbnail: Mock3,
             description: "An application that makes it easier for you to manage your medication and provides better self-medication guidance.",
             hasPrototype: true,
+            hasStudyCase: true,
         },
         {
             id: 3,
@@ -38,6 +42,7 @@ export default function PortfolioPage() {
             thumbnail: Mock4,
             description: "Green Transportation App and Carbon Emission Tracker",
             hasPrototype: true,
+            hasStudyCase: false,
         },
         {
             id: 4,
@@ -45,6 +50,7 @@ export default function PortfolioPage() {
             thumbnail: Mock5,
             description: "An app that can turn any topic into an intelligent learning experience with AI-generated lessons, quizzes, and videos..",
             hasPrototype: true,
+            hasStudyCase: false,
         },
         {
             id: 5,
@@ -52,6 +58,7 @@ export default function PortfolioPage() {
             thumbnail: Mock6,
             description: "Spotify clone app Find music that fits your mood, every time.",
             hasPrototype: false,
+            hasStudyCase: false,
         },
         {
             id: 6,
@@ -59,6 +66,7 @@ export default function PortfolioPage() {
             thumbnail: Mock7,
             description: "An application that can Manage, Monitor, and Accelerate the Procurement of Goods & Services with a Transparent Tracking System that makes every process run efficiently.",
             hasPrototype: false,
+            hasStudyCase: false,
         },
     ]), []);
 
@@ -175,33 +183,67 @@ export default function PortfolioPage() {
                     }}
                 >Every project tells a story. Here are some highlights where design meets functionality</motion.p>
             </div>
-            <motion.div 
-                className='w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
-                initial={{ scale: 0.75, opacity: 0.75 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            >
-                {projects.map((project) => (
-                    <motion.button
-                        key={project.id}
-                        onClick={() => setActiveProject(project)}
-                        className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer"
-                        whileHover={{ y: -4 }}
-                        transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+
+            <div className='flex flex-col gap-y-4'>
+                <h3 className='text-3xl text-[#1c1c1c] text-center font-caveat text-gray-600'>UX Study Case</h3>
+                <Link href="/study-case/obatku">
+                    <motion.div 
+                        className='w-full max-w-6xl flex flex-col items-center gap-6'
+                        initial={{ scale: 0.75, opacity: 0.75 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <div className="relative">
-                            <Image src={project.thumbnail} alt={project.name} className="w-full aspect-square object-cover" />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-                        </div>
-                        <div className="p-4">
-                            <h3 className='text-[18px] font-medium tracking-[-0.02em] text-[#1c1c1c]'>{project.name}</h3>
-                            {project.description && (
-                                <p className='text-[14px] text-gray-500 line-clamp-2'>{project.description}</p>
-                            )}
-                        </div>
-                    </motion.button>
-                ))}
-            </motion.div>
+                        <motion.button
+                            key={projects[1].id}
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            whileHover={{ y: -4 }}
+                            transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                        >
+                            <div className="relative">
+                                <Image src={ObatkuThumbnail} alt={projects[1].name} className="w-full aspect-video object-cover" />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                            </div>
+                            <div className="p-4">
+                                <h3 className='text-[18px] font-medium tracking-[-0.02em] text-[#1c1c1c]'>Obatku UX Study Case</h3>
+                                {projects[1].description && (
+                                    <p className='text-[14px] text-gray-500 line-clamp-2'>Study case for a mobile app that helps users organize their medication schedule and improve self-medication practices.</p>
+                                )}
+                            </div>
+                        </motion.button>
+                    </motion.div>
+                </Link>
+            </div>
+
+            <div className='flex flex-col gap-y-4 pt-12'>
+                <h3 className='text-3xl text-[#1c1c1c] text-center font-caveat text-gray-600'>User Interface Design</h3>
+                <motion.div 
+                    className='w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
+                    initial={{ scale: 0.75, opacity: 0.75 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    {projects.map((project) => (
+                        <motion.button
+                            key={project.id}
+                            onClick={() => setActiveProject(project)}
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer"
+                            whileHover={{ y: -4 }}
+                            transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                        >
+                            <div className="relative">
+                                <Image src={project.thumbnail} alt={project.name} className="w-full aspect-square object-cover" />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                            </div>
+                            <div className="p-4">
+                                <h3 className='text-[18px] font-medium tracking-[-0.02em] text-[#1c1c1c]'>{project.name}</h3>
+                                {project.description && (
+                                    <p className='text-[14px] text-gray-500 line-clamp-2'>{project.description}</p>
+                                )}
+                            </div>
+                        </motion.button>
+                    ))}
+                </motion.div>
+            </div>
 
             <AnimatePresence>
                 {activeProject && (
