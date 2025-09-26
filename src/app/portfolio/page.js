@@ -2,7 +2,10 @@
 import { useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { mockupData } from '@/lib/Mockups';
+import SplitText from '@/components/SplitText';
 import { ArrowLeft } from 'lucide-react';
 import Mock2 from "@/assets/mockup/2.png";
 import Mock3 from "@/assets/mockup/3.png";
@@ -10,10 +13,10 @@ import Mock4 from "@/assets/mockup/4.png";
 import Mock5 from "@/assets/mockup/5.png";
 import Mock6 from "@/assets/mockup/6.png";
 import Mock7 from "@/assets/mockup/7.png";
-import SplitText from '@/components/SplitText';
-import { mockupData } from '@/lib/Mockups';
-import ObatkuThumbnail from "@/assets/studycase/obatku/obatku-thumbnail.png"
-import Link from 'next/link';
+import ObatkuThumbnail from "@/assets/studycase/obatku-thumbnail.png"
+import EcoTrailHumbnail from "@/assets/studycase/EcoTrailThumbnail.png"
+import ArunaJayaWeb from "@/assets/frontend/ArunaJaya.png"
+import SEASalonWeb from "@/assets/frontend/SEASalon.png"
 
 export default function PortfolioPage() {
     const router = useRouter();
@@ -140,6 +143,7 @@ export default function PortfolioPage() {
 
     return (
         <div className='text-[#1C1C1C] bg-white w-full h-full flex flex-col items-center gap-y-[40px] py-[100px] lg:py-[40px] px-4 relative'>
+            {/* Back Button */}
             <motion.button
                 onClick={() => router.push('/')}
                 className="fixed top-8 left-8 flex items-center gap-x-[12px] transition-all rounded-full font-medium px-[24px] py-[12px] cursor-pointer rounded-full bg-gray-100 text-[#1c1c1c] text-[20px] z-10"
@@ -156,6 +160,8 @@ export default function PortfolioPage() {
                 <ArrowLeft size={20} className='text-gray-500' />
                 <span className='text-[16px] font-medium text-gray-600'>Back to Home</span>
             </motion.button>
+
+            {/* Title */}
             <div className='text-center text-[#1c1c1c] flex flex-col items-center'>
                 <SplitText
                     text="Projects I've Brought to Life"
@@ -184,15 +190,18 @@ export default function PortfolioPage() {
                 >Every project tells a story. Here are some highlights where design meets functionality</motion.p>
             </div>
 
-            <div className='flex flex-col gap-y-4'>
-                <h3 className='text-3xl text-[#1c1c1c] text-center font-caveat text-gray-600'>UX Study Case</h3>
-                <Link href="/study-case/obatku">
-                    <motion.div 
-                        className='w-full max-w-6xl flex flex-col items-center gap-6'
-                        initial={{ scale: 0.75, opacity: 0.75 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                    >
+            {/* UX Study Cases */}
+            <div className='flex flex-col gap-y-8 items-center'>
+                <div className='px-4 py-1 border rounded-full w-fit bg-[#1c1c1c]'>
+                    <h3 className='text-md text-[#1c1c1c] text-center text-gray-800 font-medium text-white'>UX Study Cases</h3>
+                </div>
+                <motion.div 
+                    className='w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6'
+                    initial={{ scale: 0.75, opacity: 0.75 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    <Link href="/study-case/obatku" target='_blank'>
                         <motion.button
                             key={projects[1].id}
                             className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
@@ -205,17 +214,35 @@ export default function PortfolioPage() {
                             </div>
                             <div className="p-4">
                                 <h3 className='text-[18px] font-medium tracking-[-0.02em] text-[#1c1c1c]'>Obatku UX Study Case</h3>
-                                {projects[1].description && (
-                                    <p className='text-[14px] text-gray-500 line-clamp-2'>Study case for a mobile app that helps users organize their medication schedule and improve self-medication practices.</p>
-                                )}
+                                <p className='text-[14px] text-gray-500 line-clamp-2'>Study case for a mobile app that helps users organize their medication schedule and improve self-medication practices.</p>
                             </div>
                         </motion.button>
-                    </motion.div>
-                </Link>
+                    </Link>
+                    <Link href="/study-case/ecotrail" target='_blank'>
+                        <motion.button
+                            key={projects[1].id}
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            whileHover={{ y: -4 }}
+                            transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                        >
+                            <div className="relative">
+                                <Image src={EcoTrailHumbnail} alt={projects[2].name} className="w-full aspect-video object-cover" />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                            </div>
+                            <div className="p-4">
+                                <h3 className='text-[18px] font-medium tracking-[-0.02em] text-[#1c1c1c]'>Ecotrail UX Study Case</h3>
+                                <p className='text-[14px] text-gray-500 line-clamp-2'>Study case for a mobile app that promotes eco-friendly transportation and tracks users’ carbon emissions.</p>
+                            </div>
+                        </motion.button>
+                    </Link>
+                </motion.div>
             </div>
 
-            <div className='flex flex-col gap-y-4 pt-12'>
-                <h3 className='text-3xl text-[#1c1c1c] text-center font-caveat text-gray-600'>User Interface Design</h3>
+            {/* Visual Designs */}
+            <div className='flex flex-col items-center gap-y-8 pt-12'>
+                <div className='px-4 py-1 border rounded-full w-fit bg-[#1c1c1c]'>
+                    <h3 className='text-md text-[#1c1c1c] text-center text-gray-800 font-medium text-white'>Visual Designs</h3>
+                </div>
                 <motion.div 
                     className='w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
                     initial={{ scale: 0.75, opacity: 0.75 }}
@@ -245,12 +272,63 @@ export default function PortfolioPage() {
                 </motion.div>
             </div>
 
+            {/* Frontend Projects */}
+            <div className='flex flex-col items-center gap-y-8 pt-12'>
+                <div className='px-4 py-1 border rounded-full w-fit bg-[#1c1c1c]'>
+                    <h3 className='text-md text-[#1c1c1c] text-center text-gray-800 font-medium text-white'>Frontend Projects</h3>
+                </div>
+                <motion.div 
+                    className='w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6'
+                    initial={{ scale: 0.75, opacity: 0.75 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    <Link href="https://aruna-jaya.vercel.app/" target='_blank'>
+                        <motion.button
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            whileHover={{ y: -4 }}
+                            transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                        >
+                            <div className="relative">
+                                <Image src={ArunaJayaWeb} alt={"Aruna Jaya Website"} className="w-full aspect-video object-cover" />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                            </div>
+                            <div className="p-4">
+                                <h3 className='text-[18px] font-medium tracking-[-0.02em] text-[#1c1c1c]'>Aruna Jaya Asset Firm</h3>
+                                <p className='text-[14px] text-gray-500 line-clamp-2'>
+                                    Aruna Jaya Capital is an asset management firm built on deep research, disciplined market analysis, and a long-term, victory-oriented investing philosophy.
+                                </p>
+                            </div>
+                        </motion.button>
+                    </Link>
+                    <Link href="https://sea-salon-five.vercel.app/" target='_blank'>
+                        <motion.button
+                            className="group text-left bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer max-w-xl"
+                            whileHover={{ y: -4 }}
+                            transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+                        >
+                            <div className="relative">
+                                <Image src={SEASalonWeb} alt={"SEA Salon Website"} className="w-full aspect-video object-cover" />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                            </div>
+                            <div className="p-4">
+                                <h3 className='text-[18px] font-medium tracking-[-0.02em] text-[#1c1c1c]'>SEA Salon</h3>
+                                <p className='text-[14px] text-gray-500 line-clamp-2'>
+                                    Website for a salon management app that enables booking, service listing, and customer ratings.
+                                </p>
+                            </div>
+                        </motion.button>
+                    </Link>
+                </motion.div>
+            </div>
+
             <AnimatePresence>
                 {activeProject && (
                     <GalleryParallax project={activeProject} onClose={() => setActiveProject(null)} />
                 )}
             </AnimatePresence>
 
+            {/* CTA */}
             <motion.div 
                 className="w-full max-w-4xl text-center mt-16 mb-20"
                 initial={{ opacity: 0, y: 40 }}
