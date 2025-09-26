@@ -14,7 +14,7 @@ import Mock5 from "@/assets/mockup/5.png";
 import Mock6 from "@/assets/mockup/6.png";
 import Mock7 from "@/assets/mockup/7.png";
 import ObatkuThumbnail from "@/assets/studycase/obatku-thumbnail.png"
-import EcoTrailHumbnail from "@/assets/studycase/EcoTrailThumbnail.png"
+import EcoTrailHumbnail from "@/assets/studycase/EcotrailThumbnail.png"
 import ArunaJayaWeb from "@/assets/frontend/ArunaJaya.png"
 import SEASalonWeb from "@/assets/frontend/SEASalon.png"
 
