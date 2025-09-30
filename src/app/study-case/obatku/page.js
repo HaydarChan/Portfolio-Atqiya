@@ -465,48 +465,45 @@ export default function StudyCaseObatku() {
             {/* Back Button */}
              <motion.button
                 onClick={() => router.push('/')}
-                className="fixed top-8 left-8 flex items-center gap-x-[12px] transition-all rounded-full font-medium px-[24px] py-[12px] cursor-pointer bg-gray-100 text-[#1c1c1c] text-[20px] z-10"
+                className="fixed top-8 left-8 flex items-center gap-x-3 transition-all font-medium px-6 py-3 cursor-pointer bg-white border border-gray-200 text-gray-700 text-sm z-10 hover:bg-gray-50"
                 whileHover={{ 
-                    scale: 1.05,
-                    y: -2,
+                    scale: 1.02,
                     transition: { duration: 0.2 }
                   }}
                   whileTap={{ 
-                    scale: 0.95,
+                    scale: 0.98,
                     transition: { duration: 0.1 }
                   }}
             >
-                <ArrowLeft size={20} className='text-gray-500' />
-                <span className='text-[16px] font-medium text-gray-600'>Back to Home</span>
+                <ArrowLeft size={16} />
+                <span>Back to Home</span>
             </motion.button>
 
             {/* Hero Section */}
-            <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600">
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-                </div>
-                
-                <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+            <section className="relative w-full h-screen flex items-center justify-center px-4">
+                <div className="text-center max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="flex items-center justify-center mb-8">
-                            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4">
-                                <Pill className="w-8 h-8 text-blue-500" />
+                        <div className="mb-8">
+                            <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <Pill className="w-10 h-10 text-gray-600" />
                             </div>
-                            <h1 className="text-6xl font-bold">Obatku</h1>
+                            <h1 className="text-7xl font-caveat text-gray-900 mb-4">Obatku</h1>
+                            <p className="text-xl text-gray-600 mb-2">A UX Case Study</p>
+                            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                                How we helped students manage their medication better through thoughtful design
+                            </p>
                         </div>
-                        <p className="text-2xl mb-4">UX Case Study</p>
-                        <p className="text-lg opacity-90">Membantu mahasiswa mengelola konsumsi obat dengan lebih baik</p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Design Thinking Process */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-6xl mx-auto px-4">
+            {/* Design Process */}
+            <section className="py-24 px-4">
+                <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -514,11 +511,13 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Design Process Method</h2>
-                        <p className="text-xl text-gray-600">DESIGN THINKING</p>
+                        <h2 className="text-5xl font-caveat text-gray-900 mb-6">Our Design Journey</h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Following the Design Thinking methodology to create a solution that truly serves our users
+                        </p>
                     </motion.div>
 
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-2">
                         {designThinkingStages.map((stage, index) => (
                             <motion.div
                                 key={stage.name}
@@ -526,12 +525,12 @@ export default function StudyCaseObatku() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className={`flex items-center gap-3 px-6 py-4 rounded-full ${
-                                    stage.active ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-600'
+                                className={`flex items-center gap-2 px-4 py-2 text-sm ${
+                                    stage.active ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-600'
                                 }`}
                             >
-                                <stage.icon className="w-6 h-6" />
-                                <span className="font-semibold">{stage.name}</span>
+                                <stage.icon className="w-4 h-4" />
+                                <span>{stage.name}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -539,66 +538,69 @@ export default function StudyCaseObatku() {
             </section>
 
             {/* Empathize Section */}
-            <section className="py-20">
-                <div className="max-w-6xl mx-auto px-4">
+            <section className="py-24 px-4">
+                <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Empathize</h2>
-                        <p className="text-xl text-gray-600">Memahami kebutuhan dan tantangan pengguna</p>
+                        <h2 className="text-5xl font-caveat text-gray-900 mb-6">Understanding the Problem</h2>
+                        <p className="text-lg text-gray-600 leading-relaxed">
+                            We started by understanding who our users are and what challenges they face. 
+                            Through interviews with 5 participants, we discovered the real struggles students 
+                            face when managing their medication.
+                        </p>
                     </motion.div>
 
                     {/* User Persona */}
-                    <div className="grid md:grid-cols-2 gap-12 mb-20">
+                    <div className="mb-20">
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="flex flex-col items-center"
+                            className="bg-gray-50 p-8 rounded-lg"
                         >
-                            <div className="w-64 h-64 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-6">
-                                <div className="w-48 h-48 bg-gradient-to-br from-blue-300 to-blue-400 rounded-full flex items-center justify-center">
-                                    <span className="text-6xl font-bold text-white">B</span>
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
+                                    <span className="text-2xl font-bold text-gray-600">B</span>
                                 </div>
-                            </div>
-                            <h3 className="text-3xl font-bold text-blue-500 mb-2">BIMO</h3>
-                            <p className="text-lg text-gray-600">Mahasiswa, 20 Tahun</p>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                            className="space-y-6"
-                        >
-                            <div>
-                                <h4 className="text-2xl font-bold text-gray-900 mb-4">Tantangan Bimo</h4>
-                                <div className="space-y-4">
-                                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                                        <p className="text-gray-700">Sering lupa minum obat, akhirnya kambuh lagi</p>
-                                    </div>
-                                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                                        <p className="text-gray-700">Sudah bawa obat, tapi kelupaan minum karena sibuk</p>
-                                    </div>
-                                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                                        <p className="text-gray-700">Aktivitas kampus padat sampai malam, fokus ke tugas dulu</p>
-                                    </div>
+                                <div>
+                                    <h3 className="text-2xl font-semibold text-gray-900">Meet Bimo</h3>
+                                    <p className="text-gray-600">Student, 20 years old</p>
                                 </div>
                             </div>
                             
-                            <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-dashed border-blue-300">
-                                <p className="text-lg text-gray-700">Bimo juga ingin tetap sehat di tengah kesibukannya.</p>
+                            <blockquote className="text-lg text-gray-700 italic mb-6 border-l-4 border-gray-300 pl-6">
+                                "Aku sering lupa minum obat karena jadwalnya beda-beda dan sibuk di kampus. 
+                                Biasanya minum obat tanpa resep untuk sakit ringan, tapi kurang paham risiko campur obat."
+                            </blockquote>
+                            
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 className="font-semibold text-gray-900 mb-3">Challenges</h4>
+                                    <ul className="space-y-2 text-gray-600">
+                                        <li>• Sering lupa minum obat karena kesibukan</li>
+                                        <li>• Tidak ada sistem pengingat yang efektif</li>
+                                        <li>• Kurang memahami risiko interaksi obat</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-gray-900 mb-3">Goals</h4>
+                                    <ul className="space-y-2 text-gray-600">
+                                        <li>• Konsisten minum obat meski jadwal padat</li>
+                                        <li>• Mendapat pengingat otomatis</li>
+                                        <li>• Tetap sehat di tengah kesibukan</li>
+                                    </ul>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Interview Findings */}
+                    {/* Key Insights */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -606,61 +608,19 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Interview Findings</h3>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Key Insights from Research</h3>
+                        <div className="space-y-4">
                             {interviewFindings.map((finding, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
-                                    className={`p-6 rounded-lg border-2 ${finding.color}`}
+                                    className="flex items-start gap-4 p-4 border-l-2 border-gray-200"
                                 >
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                            <finding.icon className="w-6 h-6 text-white" />
-                                        </div>
-                                        <p className="text-gray-700 leading-relaxed">{finding.text}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    {/* Affinity Map */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="mb-20"
-                    >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-8">Affinity Map</h3>
-                        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-                            Affinity map membantu mengelompokkan temuan dan opini pengguna ke dalam kategori bermakna untuk mengungkap pola, kebutuhan, dan masalah yang relevan.
-                        </p>
-                        
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {affinityCategories.map((category, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
-                                    className="bg-white rounded-lg shadow-lg overflow-hidden"
-                                >
-                                    <div className={`${category.color} p-4`}>
-                                        <h4 className="text-white font-bold text-lg">{category.title}</h4>
-                                    </div>
-                                    <div className="p-4 space-y-2">
-                                        {category.items.map((item, itemIndex) => (
-                                            <div key={itemIndex} className="text-sm text-gray-600 bg-gray-50 p-2 rounded">
-                                                {item}
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <finding.icon className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
+                                    <p className="text-gray-700">{finding.text}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -672,10 +632,13 @@ export default function StudyCaseObatku() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center"
+                        className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-gray-900 mb-12">Bagaimana di Indonesia?</h3>
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">The Bigger Picture</h3>
+                        <p className="text-lg text-gray-600 mb-8">
+                            Our research revealed that this isn't just Bimo's problem. The data shows a broader issue in Indonesia:
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-6">
                             {statistics.map((stat, index) => (
                                 <motion.div
                                     key={index}
@@ -683,14 +646,11 @@ export default function StudyCaseObatku() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.2 }}
                                     viewport={{ once: true }}
-                                    className="bg-blue-500 text-white p-8 rounded-lg relative overflow-hidden"
+                                    className="text-center p-6 border border-gray-200 rounded-lg"
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 opacity-90"></div>
-                                    <div className="relative z-10">
-                                        <div className="text-5xl font-bold mb-4">{stat.percentage}</div>
-                                        <p className="text-lg mb-2">{stat.description}</p>
-                                        <p className="text-sm opacity-80">({stat.source})</p>
-                                    </div>
+                                    <div className="text-4xl font-bold text-gray-900 mb-2">{stat.percentage}</div>
+                                    <p className="text-gray-600 mb-2">{stat.description}</p>
+                                    <p className="text-sm text-gray-400">({stat.source})</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -699,20 +659,23 @@ export default function StudyCaseObatku() {
             </section>
 
             {/* Define Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-6xl mx-auto px-4">
+            <section className="py-24 px-4 bg-gray-50">
+                <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Define</h2>
-                        <p className="text-xl text-gray-600">Mendefinisikan masalah dan tujuan berdasarkan temuan penelitian</p>
+                        <h2 className="text-5xl font-caveat text-gray-900 mb-6">Defining the Challenge</h2>
+                        <p className="text-lg text-gray-600 leading-relaxed">
+                            With our research insights, we mapped out the user journey and identified the core problems 
+                            that needed solving. This helped us focus on what truly matters to our users.
+                        </p>
                     </motion.div>
 
-                    {/* User Journey Map */}
+                    {/* User Journey */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -720,137 +683,44 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">User Journey Map</h3>
-                        
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <div className="overflow-x-auto">
-                                <table className="w-full">
-                                    <thead className="bg-blue-500 text-white">
-                                        <tr>
-                                            <th className="px-4 py-4 text-left font-semibold">Stage</th>
-                                            <th className="px-4 py-4 text-left font-semibold">Action</th>
-                                            <th className="px-4 py-4 text-left font-semibold">Tasks</th>
-                                            <th className="px-4 py-4 text-left font-semibold">Pain Points</th>
-                                            <th className="px-4 py-4 text-left font-semibold">Emotions</th>
-                                            <th className="px-4 py-4 text-left font-semibold">Opportunities</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {userJourneyStages.map((stage, index) => (
-                                            <motion.tr
-                                                key={index}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                                viewport={{ once: true }}
-                                                className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} border-b border-gray-200`}
-                                            >
-                                                <td className="px-4 py-4 font-semibold text-blue-600">{stage.stage}</td>
-                                                <td className="px-4 py-4">{stage.action}</td>
-                                                <td className="px-4 py-4">
-                                                    <ul className="list-disc list-inside space-y-1 text-sm">
-                                                        {stage.tasks.map((task, taskIndex) => (
-                                                            <li key={taskIndex}>{task}</li>
-                                                        ))}
-                                                    </ul>
-                                                </td>
-                                                <td className="px-4 py-4 text-red-600 font-medium">{stage.painPoints}</td>
-                                                <td className="px-4 py-4 text-gray-700">{stage.emotions}</td>
-                                                <td className="px-4 py-4 text-green-600 font-medium">{stage.opportunities}</td>
-                                            </motion.tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Enhanced User Persona */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="mb-20"
-                    >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">User Persona</h3>
-                        
-                        <div className="bg-white rounded-lg shadow-lg p-8">
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <div className="flex flex-col items-center">
-                                    <div className="w-48 h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-6">
-                                        <div className="w-36 h-36 bg-gradient-to-br from-blue-300 to-blue-400 rounded-full flex items-center justify-center">
-                                            <span className="text-4xl font-bold text-white">B</span>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">The User Journey</h3>
+                        <div className="space-y-6">
+                            {userJourneyStages.map((stage, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="bg-white p-6 rounded-lg border border-gray-200"
+                                >
+                                    <div className="flex items-start justify-between mb-4">
+                                        <h4 className="text-xl font-semibold text-gray-900">{stage.stage}</h4>
+                                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                                            Step {index + 1}
+                                        </span>
+                                    </div>
+                                    <p className="text-gray-600 mb-4">{stage.action}</p>
+                                    <div className="grid md:grid-cols-3 gap-4 text-sm">
+                                        <div>
+                                            <h5 className="font-semibold text-gray-900 mb-2">Tasks</h5>
+                                            <ul className="space-y-1 text-gray-600">
+                                                {stage.tasks.map((task, taskIndex) => (
+                                                    <li key={taskIndex}>• {task}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 className="font-semibold text-red-600 mb-2">Pain Points</h5>
+                                            <p className="text-gray-600">{stage.painPoints}</p>
+                                        </div>
+                                        <div>
+                                            <h5 className="font-semibold text-green-600 mb-2">Opportunities</h5>
+                                            <p className="text-gray-600">{stage.opportunities}</p>
                                         </div>
                                     </div>
-                                    <h4 className="text-2xl font-bold text-blue-500 mb-2">BIMO</h4>
-                                    <p className="text-lg text-gray-600 mb-4">Mahasiswa, 20 Tahun</p>
-                                    <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                                        <p className="text-gray-700 italic">
-                                            "Aku sering lupa minum obat karena jadwalnya beda-beda dan sibuk di kampus. 
-                                            Biasanya minum obat tanpa resep untuk sakit ringan, tapi kurang paham risiko campur obat. 
-                                            Udah coba taruh obat di tempat yang kelihatan, tapi masih sering lupa."
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div className="space-y-6">
-                                    <div>
-                                        <h5 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                            <Target className="w-5 h-5 text-red-500" />
-                                            Goals
-                                        </h5>
-                                        <ul className="space-y-2">
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-gray-700">Menjaga konsistensi konsumsi obat meskipun jadwalnya padat</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-gray-700">Memantau kondisi kesehatan pribadi tanpa harus ke dokter</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-gray-700">Mendapatkan peringatan otomatis agar tidak lupa minum obat</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div>
-                                        <h5 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                            <AlertTriangle className="w-5 h-5 text-orange-500" />
-                                            Frustrations
-                                        </h5>
-                                        <ul className="space-y-2">
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-gray-700">Sering lupa minum obat karena prioritas utama adalah tugas kuliah</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-gray-700">Tidak ada sistem yang bisa otomatis mengingatkan sesuai kebutuhan pribadi</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-gray-700">Tidak paham risiko mencampur obat saat swamedikasi</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-gray-700">Kurang tahu mana obat yang aman dikonsumsi tanpa konsultasi</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-                                <p className="text-gray-700 leading-relaxed">
-                                    Bimo adalah mahasiswa aktif tingkat 3 yang sering terlibat dalam kegiatan organisasi dan kuliah hingga malam hari. 
-                                    Ia menderita penyakit kronis asam lambung dan harus rutin minum obat. Meskipun sudah mencoba membawa obat ke kampus 
-                                    dan mencatat jadwal minum di notes pribadinya, Bimo tetap sering lupa karena kesibukan akademik yang menyita perhatian. 
-                                    Ia merasa butuh bantuan sistem yang bisa membantunya lebih disiplin dalam minum obat dan menjaga kesehatannya.
-                                </p>
-                            </div>
+                                </motion.div>
+                            ))}
                         </div>
                     </motion.div>
 
@@ -862,9 +732,8 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Problem Statements</h3>
-                        
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Core Problems</h3>
+                        <div className="space-y-6">
                             {problemStatements.map((problem, index) => (
                                 <motion.div
                                     key={index}
@@ -872,28 +741,30 @@ export default function StudyCaseObatku() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.2 }}
                                     viewport={{ once: true }}
-                                    className="bg-white p-6 rounded-lg shadow-lg relative"
+                                    className="bg-white p-6 rounded-lg border border-gray-200"
                                 >
-                                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold">
-                                        {problem.number}
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                            {problem.number}
+                                        </div>
+                                        <p className="text-gray-700 text-lg leading-relaxed">
+                                            {problem.highlight ? (
+                                                problem.text.split(' ').map((word, wordIndex) => {
+                                                    const cleanWord = word.replace(/[.,!?]/g, '');
+                                                    const isHighlighted = problem.highlight.some(h => 
+                                                        cleanWord.toLowerCase().includes(h.toLowerCase())
+                                                    );
+                                                    return (
+                                                        <span key={wordIndex} className={isHighlighted ? 'font-semibold text-gray-900' : ''}>
+                                                            {word}{' '}
+                                                        </span>
+                                                    );
+                                                })
+                                            ) : (
+                                                problem.text
+                                            )}
+                                        </p>
                                     </div>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        {problem.highlight ? (
-                                            problem.text.split(' ').map((word, wordIndex) => {
-                                                const cleanWord = word.replace(/[.,!?]/g, '');
-                                                const isHighlighted = problem.highlight.some(h => 
-                                                    cleanWord.toLowerCase().includes(h.toLowerCase())
-                                                );
-                                                return (
-                                                    <span key={wordIndex} className={isHighlighted ? 'font-bold text-gray-900' : ''}>
-                                                        {word}{' '}
-                                                    </span>
-                                                );
-                                            })
-                                        ) : (
-                                            problem.text
-                                        )}
-                                    </p>
                                 </motion.div>
                             ))}
                         </div>
@@ -907,12 +778,8 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="text-center"
                     >
-                        <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center justify-center gap-3">
-                            <Target className="w-8 h-8 text-red-500" />
-                            Goal Statements
-                        </h3>
-                        
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Our Goals</h3>
+                        <div className="space-y-6">
                             {goalStatements.map((goal, index) => (
                                 <motion.div
                                     key={index}
@@ -920,28 +787,25 @@ export default function StudyCaseObatku() {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="bg-blue-500 text-white p-6 rounded-lg relative overflow-hidden"
+                                    className="bg-white p-6 rounded-lg border border-gray-200"
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 opacity-90"></div>
-                                    <div className="relative z-10">
-                                        <p className="text-lg leading-relaxed">
-                                            {goal.highlight ? (
-                                                goal.text.split(' ').map((word, wordIndex) => {
-                                                    const cleanWord = word.replace(/[.,!?]/g, '');
-                                                    const isHighlighted = goal.highlight.some(h => 
-                                                        cleanWord.toLowerCase().includes(h.toLowerCase())
-                                                    );
-                                                    return (
-                                                        <span key={wordIndex} className={isHighlighted ? 'font-bold' : ''}>
-                                                            {word}{' '}
-                                                        </span>
-                                                    );
-                                                })
-                                            ) : (
-                                                goal.text
-                                            )}
-                                        </p>
-                                    </div>
+                                    <p className="text-lg text-gray-700 leading-relaxed">
+                                        {goal.highlight ? (
+                                            goal.text.split(' ').map((word, wordIndex) => {
+                                                const cleanWord = word.replace(/[.,!?]/g, '');
+                                                const isHighlighted = goal.highlight.some(h => 
+                                                    cleanWord.toLowerCase().includes(h.toLowerCase())
+                                                );
+                                                return (
+                                                    <span key={wordIndex} className={isHighlighted ? 'font-semibold text-gray-900' : ''}>
+                                                        {word}{' '}
+                                                    </span>
+                                                );
+                                            })
+                                        ) : (
+                                            goal.text
+                                        )}
+                                    </p>
                                 </motion.div>
                             ))}
                         </div>
@@ -950,17 +814,20 @@ export default function StudyCaseObatku() {
             </section>
 
             {/* Ideate Section */}
-            <section className="py-20">
-                <div className="max-w-6xl mx-auto px-4">
+            <section className="py-24 px-4">
+                <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Ideate</h2>
-                        <p className="text-xl text-gray-600">Menghasilkan ide-ide kreatif untuk solusi yang inovatif</p>
+                        <h2 className="text-5xl font-caveat text-gray-900 mb-6">Exploring Solutions</h2>
+                        <p className="text-lg text-gray-600 leading-relaxed">
+                            With clear problems defined, we explored various solutions through competitor analysis, 
+                            feature mapping, and creative ideation sessions to find the best approach.
+                        </p>
                     </motion.div>
 
                     {/* Competitor Analysis */}
@@ -971,20 +838,23 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Competitor Analysis</h3>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Competitive Landscape</h3>
+                        <p className="text-lg text-gray-600 mb-8">
+                            We analyzed existing solutions to understand what works and identify opportunities for improvement.
+                        </p>
                         
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div className="bg-gray-50 p-6 rounded-lg">
                             <div className="overflow-x-auto">
-                                <table className="w-full">
-                                    <thead className="bg-blue-500 text-white">
-                                        <tr>
-                                            <th className="px-4 py-4 text-left font-semibold">Features</th>
+                                <table className="w-full text-sm">
+                                    <thead>
+                                        <tr className="border-b border-gray-200">
+                                            <th className="text-left py-3 font-semibold text-gray-900">Features</th>
                                             {competitors.map((competitor, index) => (
-                                                <th key={index} className="px-4 py-4 text-center font-semibold">
-                                                    <div className="flex flex-col items-center gap-2">
-                                                        {competitor.isMain && <span className="text-yellow-300">👑</span>}
+                                                <th key={index} className="text-center py-3 font-semibold text-gray-900">
+                                                    <div className="flex flex-col items-center gap-1">
+                                                        {competitor.isMain && <span className="text-xs">👑</span>}
                                                         <span className="text-lg">{competitor.logo}</span>
-                                                        <span className="text-sm">{competitor.name}</span>
+                                                        <span className="text-xs">{competitor.name}</span>
                                                     </div>
                                                 </th>
                                             ))}
@@ -992,42 +862,35 @@ export default function StudyCaseObatku() {
                                     </thead>
                                     <tbody>
                                         {features.map((feature, featureIndex) => (
-                                            <motion.tr
-                                                key={featureIndex}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
-                                                viewport={{ once: true }}
-                                                className={`${featureIndex % 2 === 0 ? 'bg-gray-50' : 'bg-white'} border-b border-gray-200`}
-                                            >
-                                                <td className="px-4 py-4 font-semibold text-gray-900">{feature}</td>
+                                            <tr key={featureIndex} className="border-b border-gray-100">
+                                                <td className="py-3 font-medium text-gray-900">{feature}</td>
                                                 {competitors.map((competitor, competitorIndex) => {
                                                     const hasFeature = competitorFeatures[competitor.name][featureIndex];
                                                     return (
-                                                        <td key={competitorIndex} className="px-4 py-4 text-center">
+                                                        <td key={competitorIndex} className="py-3 text-center">
                                                             {hasFeature ? (
-                                                                <span className="text-green-500 text-2xl">✓</span>
+                                                                <span className="text-green-600">✓</span>
                                                             ) : (
-                                                                <span className="text-red-500 text-2xl">✗</span>
+                                                                <span className="text-gray-300">✗</span>
                                                             )}
                                                         </td>
                                                     );
                                                 })}
-                                            </motion.tr>
+                                            </tr>
                                         ))}
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         
-                        <div className="mt-8 text-center">
-                            <p className="text-lg text-gray-600">
-                                <span className="font-bold text-blue-600">Obatku</span> adalah satu-satunya aplikasi yang memiliki semua fitur yang dibandingkan
+                        <div className="mt-6 text-center">
+                            <p className="text-gray-600">
+                                <span className="font-semibold text-gray-900">Obatku</span> is the only app with all features compared
                             </p>
                         </div>
                     </motion.div>
 
-                    {/* Feature Mapping */}
+                    {/* Key Features */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1035,44 +898,36 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Feature Mapping</h3>
-                        
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <div className="overflow-x-auto">
-                                <table className="w-full">
-                                    <thead className="bg-blue-500 text-white">
-                                        <tr>
-                                            <th className="px-4 py-4 text-left font-semibold">Fitur</th>
-                                            <th className="px-4 py-4 text-left font-semibold">Manfaat Untuk Pengguna</th>
-                                            <th className="px-4 py-4 text-left font-semibold">Manfaat Untuk Bisnis</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {featureMapping.map((feature, index) => (
-                                            <motion.tr
-                                                key={index}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                                viewport={{ once: true }}
-                                                className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} border-b border-gray-200`}
-                                            >
-                                                <td className="px-4 py-4">
-                                                    <div className="flex items-center gap-3">
-                                                        <span className="text-2xl">{feature.icon}</span>
-                                                        <div>
-                                                            <h4 className="font-semibold text-gray-900">{feature.feature}</h4>
-                                                            <p className="text-sm text-gray-600">{feature.description}</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="px-4 py-4 text-gray-700">{feature.userBenefit}</td>
-                                                <td className="px-4 py-4 text-gray-700">{feature.businessBenefit}</td>
-                                            </motion.tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Key Features</h3>
+                        <div className="space-y-6">
+                            {featureMapping.map((feature, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="bg-white p-6 rounded-lg border border-gray-200"
+                                >
+                                    <div className="flex items-start gap-4">
+                                        <span className="text-2xl">{feature.icon}</span>
+                                        <div className="flex-1">
+                                            <h4 className="text-xl font-semibold text-gray-900 mb-2">{feature.feature}</h4>
+                                            <p className="text-gray-600 mb-4">{feature.description}</p>
+                                            <div className="grid md:grid-cols-2 gap-4 text-sm">
+                                                <div>
+                                                    <h5 className="font-semibold text-gray-900 mb-1">User Benefit</h5>
+                                                    <p className="text-gray-600">{feature.userBenefit}</p>
+                                                </div>
+                                                <div>
+                                                    <h5 className="font-semibold text-gray-900 mb-1">Business Benefit</h5>
+                                                    <p className="text-gray-600">{feature.businessBenefit}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
                         </div>
                     </motion.div>
 
@@ -1084,12 +939,12 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="text-center"
                     >
-                        <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center justify-center gap-3">
-                            <Lightbulb className="w-8 h-8 text-yellow-500" />
-                            How Might We?
-                        </h3>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">How Might We?</h3>
+                        <p className="text-lg text-gray-600 mb-8">
+                            These questions guided our ideation process and helped us think creatively about solutions.
+                        </p>
                         
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <div className="space-y-6">
                             {howMightWeQuestions.map((hmw, index) => (
                                 <motion.div
                                     key={index}
@@ -1097,12 +952,9 @@ export default function StudyCaseObatku() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.2 }}
                                     viewport={{ once: true }}
-                                    className="bg-white p-6 rounded-lg shadow-lg relative"
+                                    className="bg-white p-6 rounded-lg border border-gray-200"
                                 >
-                                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold">
-                                        🤔
-                                    </div>
-                                    <p className="text-gray-700 leading-relaxed mb-4">
+                                    <p className="text-lg text-gray-700 leading-relaxed mb-4">
                                         {hmw.highlight ? (
                                             hmw.question.split(' ').map((word, wordIndex) => {
                                                 const cleanWord = word.replace(/[.,!?]/g, '');
@@ -1110,7 +962,7 @@ export default function StudyCaseObatku() {
                                                     cleanWord.toLowerCase().includes(h.toLowerCase())
                                                 );
                                                 return (
-                                                    <span key={wordIndex} className={isHighlighted ? 'font-bold text-gray-900' : ''}>
+                                                    <span key={wordIndex} className={isHighlighted ? 'font-semibold text-gray-900' : ''}>
                                                         {word}{' '}
                                                     </span>
                                                 );
@@ -1119,7 +971,7 @@ export default function StudyCaseObatku() {
                                             hmw.question
                                         )}
                                     </p>
-                                    <div className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                    <div className="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium">
                                         {hmw.action}
                                     </div>
                                 </motion.div>
@@ -1130,20 +982,23 @@ export default function StudyCaseObatku() {
             </section>
 
             {/* Prototype Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-6xl mx-auto px-4">
+            <section className="py-24 px-4 bg-gray-50">
+                <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Prototype</h2>
-                        <p className="text-xl text-gray-600">Mengembangkan solusi berdasarkan prinsip-prinsip UX yang terbukti</p>
+                        <h2 className="text-5xl font-caveat text-gray-900 mb-6">Building the Solution</h2>
+                        <p className="text-lg text-gray-600 leading-relaxed">
+                            With our research insights and feature planning complete, we designed a prototype that 
+                            follows proven UX principles and addresses our users' core needs.
+                        </p>
                     </motion.div>
 
-                    {/* Figma Prototype Link */}
+                    {/* Interactive Prototype */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1151,33 +1006,31 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                            <div className="flex items-center justify-center mb-6">
-                                <div className="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
-                                    <Smartphone className="w-8 h-8 text-white" />
-                                </div>
-                                <h3 className="text-3xl font-bold text-gray-900">Interactive Prototype</h3>
+                        <div className="bg-white p-8 rounded-lg border border-gray-200 text-center">
+                            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <Smartphone className="w-8 h-8 text-gray-600" />
                             </div>
-                            <p className="text-lg text-gray-600 mb-8">
-                                Jelajahi prototype interaktif Obatku untuk merasakan pengalaman pengguna yang telah dirancang
+                            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Interactive Prototype</h3>
+                            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                                Experience the complete user journey through our interactive prototype
                             </p>
                             <motion.a
                                 href="https://www.figma.com/proto/w5u4Z5mWb0twh3YytkLq5t/ObatKu---UX-Design?page-id=103%3A15366&node-id=287-7767&p=f&viewport=-295%2C59%2C0.07&t=5JFENNVytrZz5y7z-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=287%3A7697&show-proto-sidebar=1"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                className="inline-flex items-center gap-3 bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors duration-200"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                             >
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M15.852 8.981h-4.588v-1.25c0-.412.335-.75.75-.75h3.088c.415 0 .75.338.75.75v1.25zm0 0v1.25c0 .412-.335.75-.75.75h-3.838c-.415 0-.75-.338-.75-.75V8.981zm-4.588-1.25v1.25c0 .412-.335.75-.75.75H6.676c-.415 0-.75-.338-.75-.75V7.731c0-.412.335-.75.75-.75h3.838c.415 0 .75.338.75.75zm0 0V6.481c0-.412-.335-.75-.75-.75H6.676c-.415 0-.75.338-.75.75v1.25c0 .412.335.75.75.75h3.838c.415 0 .75-.338.75-.75zm8.5-1.5c0-.828-.672-1.5-1.5-1.5H5.176c-.828 0-1.5.672-1.5 1.5v11.5c0 .828.672 1.5 1.5 1.5h13.088c.828 0 1.5-.672 1.5-1.5V6.231zm-1.5 10H5.176c-.276 0-.5-.224-.5-.5V6.731c0-.276.224-.5.5-.5h13.088c.276 0 .5.224.5.5v9.5c0 .276-.224.5-.5.5z"/>
                                 </svg>
-                                Buka Prototype di Figma
+                                View Prototype
                             </motion.a>
                         </div>
                     </motion.div>
 
-                    {/* UX Laws Implementation */}
+                    {/* Design Principles */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1185,12 +1038,12 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12 flex items-center justify-center gap-3">
-                            <span className="text-4xl">⚖️</span>
-                            Penerapan UX Laws
-                        </h3>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Design Principles</h3>
+                        <p className="text-lg text-gray-600 mb-8">
+                            Our design follows established UX laws to ensure intuitive and effective user experiences.
+                        </p>
                         
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="space-y-8">
                             {uxLaws.map((law, index) => (
                                 <motion.div
                                     key={index}
@@ -1198,11 +1051,11 @@ export default function StudyCaseObatku() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="bg-white rounded-lg shadow-lg p-6"
+                                    className="bg-white p-6 rounded-lg border border-gray-200"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-3xl">{law.icon}</span>
-                                        <h4 className="text-xl font-bold text-gray-900">{law.name}</h4>
+                                        <span className="text-2xl">{law.icon}</span>
+                                        <h4 className="text-xl font-semibold text-gray-900">{law.name}</h4>
                                     </div>
                                     
                                     <p className="text-gray-600 mb-6 leading-relaxed">
@@ -1217,7 +1070,7 @@ export default function StudyCaseObatku() {
                                                 <ul className="space-y-1">
                                                     {example.features.map((feature, featureIndex) => (
                                                         <li key={featureIndex} className="text-sm text-gray-700 flex items-start gap-2">
-                                                            <span className="text-blue-500 mt-1">•</span>
+                                                            <span className="text-gray-400 mt-1">•</span>
                                                             {feature}
                                                         </li>
                                                     ))}
@@ -1230,7 +1083,7 @@ export default function StudyCaseObatku() {
                         </div>
                     </motion.div>
 
-                    {/* Key Features Showcase */}
+                    {/* Core Features */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1238,7 +1091,10 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="text-center"
                     >
-                        <h3 className="text-3xl font-bold text-gray-900 mb-12">Fitur Utama Aplikasi</h3>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Core Features</h3>
+                        <p className="text-lg text-gray-600 mb-12">
+                            Three key features that address our users' main pain points
+                        </p>
                         
                         <div className="grid md:grid-cols-3 gap-8">
                             <motion.div
@@ -1246,14 +1102,14 @@ export default function StudyCaseObatku() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-white p-6 rounded-lg shadow-lg"
+                                className="bg-white p-6 rounded-lg border border-gray-200"
                             >
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Calendar className="w-8 h-8 text-blue-500" />
+                                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <Calendar className="w-8 h-8 text-gray-600" />
                                 </div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-3">Jadwal Minum Obat</h4>
+                                <h4 className="text-xl font-semibold text-gray-900 mb-3">Medication Reminders</h4>
                                 <p className="text-gray-600">
-                                    Pengingat otomatis dengan konfirmasi minum obat dan tracking kepatuhan
+                                    Automated reminders with confirmation tracking to ensure consistent medication intake
                                 </p>
                             </motion.div>
 
@@ -1262,14 +1118,14 @@ export default function StudyCaseObatku() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-white p-6 rounded-lg shadow-lg"
+                                className="bg-white p-6 rounded-lg border border-gray-200"
                             >
-                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Pill className="w-8 h-8 text-green-500" />
+                                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <Pill className="w-8 h-8 text-gray-600" />
                                 </div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-3">Manajemen Stok</h4>
+                                <h4 className="text-xl font-semibold text-gray-900 mb-3">Stock Management</h4>
                                 <p className="text-gray-600">
-                                    Pantau stok obat dan dapatkan notifikasi saat mendekati kadaluarsa
+                                    Track medication inventory and get notifications when supplies are running low
                                 </p>
                             </motion.div>
 
@@ -1278,14 +1134,14 @@ export default function StudyCaseObatku() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
                                 viewport={{ once: true }}
-                                className="bg-white p-6 rounded-lg shadow-lg"
+                                className="bg-white p-6 rounded-lg border border-gray-200"
                             >
-                                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Brain className="w-8 h-8 text-purple-500" />
+                                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <Brain className="w-8 h-8 text-gray-600" />
                                 </div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-3">Chatbot AI</h4>
+                                <h4 className="text-xl font-semibold text-gray-900 mb-3">AI Health Assistant</h4>
                                 <p className="text-gray-600">
-                                    Konsultasi kesehatan dan informasi obat dengan AI yang terpercaya
+                                    Get reliable health information and medication guidance through our AI chatbot
                                 </p>
                             </motion.div>
                         </div>
@@ -1294,20 +1150,23 @@ export default function StudyCaseObatku() {
             </section>
 
             {/* Testing Section */}
-            <section className="py-20">
-                <div className="max-w-6xl mx-auto px-4">
+            <section className="py-24 px-4">
+                <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center mb-16"
+                        className="mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Testing</h2>
-                        <p className="text-xl text-gray-600">Menguji solusi dengan pengguna nyata dan mengiterasi berdasarkan feedback</p>
+                        <h2 className="text-5xl font-caveat text-gray-900 mb-6">Testing & Iteration</h2>
+                        <p className="text-lg text-gray-600 leading-relaxed">
+                            We tested our solution with real users through three iterations, measuring usability 
+                            and gathering feedback to continuously improve the experience.
+                        </p>
                     </motion.div>
 
-                    {/* Usability Testing Overview */}
+                    {/* Testing Overview */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1315,11 +1174,11 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-12 text-center text-white">
-                            <h3 className="text-4xl font-bold mb-4">Usability Testing</h3>
-                            <div className="bg-white bg-opacity-20 rounded-lg p-6 inline-block">
-                                <span className="text-6xl font-bold">3</span>
-                                <p className="text-xl mt-2">Iterasi</p>
+                        <div className="bg-gray-50 p-8 rounded-lg text-center">
+                            <h3 className="text-3xl font-semibold text-gray-900 mb-4">Usability Testing</h3>
+                            <div className="inline-block bg-white p-6 rounded-lg border border-gray-200">
+                                <span className="text-5xl font-bold text-gray-900">3</span>
+                                <p className="text-lg text-gray-600 mt-2">Iterations</p>
                             </div>
                         </div>
                     </motion.div>
@@ -1332,7 +1191,7 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Hasil Testing</h3>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Testing Results</h3>
                         
                         <div className="space-y-12">
                             {testingResults.map((result, index) => (
@@ -1342,82 +1201,82 @@ export default function StudyCaseObatku() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.2 }}
                                     viewport={{ once: true }}
-                                    className="bg-white rounded-lg shadow-lg p-8"
+                                    className="bg-white p-8 rounded-lg border border-gray-200"
                                 >
                                     <div className="flex items-center justify-between mb-6">
-                                        <h4 className="text-2xl font-bold text-gray-900">Iterasi {result.iteration}</h4>
-                                        <div className="bg-blue-500 text-white px-4 py-2 rounded-full">
-                                            <span className="text-lg font-bold">NPS {result.nps}%</span>
+                                        <h4 className="text-2xl font-semibold text-gray-900">Iteration {result.iteration}</h4>
+                                        <div className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full">
+                                            <span className="text-lg font-semibold">NPS {result.nps}%</span>
                                         </div>
                                     </div>
 
                                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                                         {/* SUS Score */}
                                         <div className="text-center">
-                                            <div className="relative w-32 h-32 mx-auto mb-4">
-                                                <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+                                            <div className="relative w-24 h-24 mx-auto mb-4">
+                                                <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
                                                     <circle
                                                         cx="50"
                                                         cy="50"
                                                         r="40"
                                                         stroke="#e5e7eb"
-                                                        strokeWidth="8"
+                                                        strokeWidth="6"
                                                         fill="none"
                                                     />
                                                     <circle
                                                         cx="50"
                                                         cy="50"
                                                         r="40"
-                                                        stroke="#fbbf24"
-                                                        strokeWidth="8"
+                                                        stroke="#374151"
+                                                        strokeWidth="6"
                                                         fill="none"
                                                         strokeDasharray={`${(result.sus / 100) * 251.2} 251.2`}
                                                         className="transition-all duration-1000"
                                                     />
                                                 </svg>
                                                 <div className="absolute inset-0 flex items-center justify-center">
-                                                    <span className="text-2xl font-bold text-gray-900">{result.sus}</span>
+                                                    <span className="text-xl font-bold text-gray-900">{result.sus}</span>
                                                 </div>
                                             </div>
-                                            <h5 className="text-lg font-semibold text-gray-900 mb-2">System Usability Scale</h5>
+                                            <h5 className="text-lg font-semibold text-gray-900 mb-2">SUS Score</h5>
                                             <p className="text-sm text-gray-600">{result.susDescription}</p>
                                         </div>
 
                                         {/* SEQ Score */}
                                         <div className="text-center">
-                                            <div className="relative w-32 h-32 mx-auto mb-4">
-                                                <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+                                            <div className="relative w-24 h-24 mx-auto mb-4">
+                                                <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
                                                     <circle
                                                         cx="50"
                                                         cy="50"
                                                         r="40"
                                                         stroke="#e5e7eb"
-                                                        strokeWidth="8"
+                                                        strokeWidth="6"
                                                         fill="none"
                                                     />
                                                     <circle
                                                         cx="50"
                                                         cy="50"
                                                         r="40"
-                                                        stroke="#fbbf24"
-                                                        strokeWidth="8"
+                                                        stroke="#374151"
+                                                        strokeWidth="6"
                                                         fill="none"
                                                         strokeDasharray={`${(result.seq / 7) * 251.2} 251.2`}
                                                         className="transition-all duration-1000"
                                                     />
                                                 </svg>
                                                 <div className="absolute inset-0 flex items-center justify-center">
-                                                    <span className="text-2xl font-bold text-gray-900">{result.seq}</span>
+                                                    <span className="text-xl font-bold text-gray-900">{result.seq}</span>
                                                 </div>
                                             </div>
-                                            <h5 className="text-lg font-semibold text-gray-900 mb-2">Single Easy Question</h5>
+                                            <h5 className="text-lg font-semibold text-gray-900 mb-2">SEQ Score</h5>
                                             <p className="text-sm text-gray-600">{result.seqDescription}</p>
                                         </div>
                                     </div>
 
                                     {/* Feedback */}
                                     <div className="mb-6">
-                                        <h5 className="text-lg font-semibold text-gray-900 mb-4">Feedback Pengguna:</h5>
+                                        <h5 className="text-lg font-semibold text-gray-900 mb-4">Key Feedback:</h5>
                                         <div className="grid md:grid-cols-2 gap-4">
                                             {result.feedback.map((item, feedbackIndex) => (
                                                 <div key={feedbackIndex} className="bg-gray-50 p-4 rounded-lg">
@@ -1428,7 +1287,7 @@ export default function StudyCaseObatku() {
                                     </div>
 
                                     {/* General Feedback */}
-                                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                                    <div className="bg-gray-50 border-l-4 border-gray-300 p-4 rounded-r-lg">
                                         <p className="text-gray-700 font-medium">{result.generalFeedback}</p>
                                     </div>
                                 </motion.div>
@@ -1436,7 +1295,7 @@ export default function StudyCaseObatku() {
                         </div>
                     </motion.div>
 
-                    {/* Iterations */}
+                    {/* Key Iterations */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1444,9 +1303,12 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="mb-20"
                     >
-                        <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Iterasi Berdasarkan Feedback</h3>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Key Improvements</h3>
+                        <p className="text-lg text-gray-600 mb-8">
+                            Based on user feedback, we made several important improvements across different iterations.
+                        </p>
                         
-                        <div className="space-y-8">
+                        <div className="space-y-6">
                             {iterations.map((iteration, index) => (
                                 <motion.div
                                     key={index}
@@ -1454,34 +1316,34 @@ export default function StudyCaseObatku() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="bg-white rounded-lg shadow-lg p-6"
+                                    className="bg-white p-6 rounded-lg border border-gray-200"
                                 >
                                     <div className="flex items-start gap-4">
-                                        <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                                        <div className="w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             {iteration.iteration}
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-2">
                                                 <h4 className="text-lg font-semibold text-gray-900">{iteration.page}</h4>
                                                 <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-sm">
-                                                    Iterasi {iteration.iteration}
+                                                    Iteration {iteration.iteration}
                                                 </span>
                                             </div>
                                             
                                             <div className="grid md:grid-cols-3 gap-4">
-                                                <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded-r">
+                                                <div className="bg-red-50 border-l-4 border-red-300 p-3 rounded-r">
                                                     <h5 className="font-semibold text-red-800 mb-1">Problem</h5>
                                                     <p className="text-sm text-red-700">{iteration.problem}</p>
                                                 </div>
                                                 
-                                                <div className="bg-green-50 border-l-4 border-green-500 p-3 rounded-r">
+                                                <div className="bg-green-50 border-l-4 border-green-300 p-3 rounded-r">
                                                     <h5 className="font-semibold text-green-800 mb-1">Solution</h5>
                                                     <p className="text-sm text-green-700">{iteration.solution}</p>
                                                 </div>
                                                 
-                                                <div className="bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r">
-                                                    <h5 className="font-semibold text-blue-800 mb-1">Change</h5>
-                                                    <p className="text-sm text-blue-700">{iteration.change}</p>
+                                                <div className="bg-gray-50 border-l-4 border-gray-300 p-3 rounded-r">
+                                                    <h5 className="font-semibold text-gray-800 mb-1">Change</h5>
+                                                    <p className="text-sm text-gray-700">{iteration.change}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1499,44 +1361,37 @@ export default function StudyCaseObatku() {
                         viewport={{ once: true }}
                         className="text-center"
                     >
-                        <h3 className="text-3xl font-bold text-gray-900 mb-12">Hasil Akhir</h3>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-8">Final Results</h3>
                         
-                        <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-8 text-white">
-                            <div className="grid md:grid-cols-3 gap-8">
+                        <div className="bg-gray-50 p-8 rounded-lg">
+                            <div className="grid md:grid-cols-3 gap-8 mb-8">
                                 <div className="text-center">
-                                    <div className="text-4xl font-bold mb-2">92.5</div>
-                                    <p className="text-lg">SUS Score</p>
-                                    <p className="text-sm opacity-90">Excellent</p>
+                                    <div className="text-4xl font-bold text-gray-900 mb-2">92.5</div>
+                                    <p className="text-lg text-gray-600">SUS Score</p>
+                                    <p className="text-sm text-gray-500">Excellent</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-4xl font-bold mb-2">6.1</div>
-                                    <p className="text-lg">SEQ Score</p>
-                                    <p className="text-sm opacity-90">Very Easy</p>
+                                    <div className="text-4xl font-bold text-gray-900 mb-2">6.1</div>
+                                    <p className="text-lg text-gray-600">SEQ Score</p>
+                                    <p className="text-sm text-gray-500">Very Easy</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-4xl font-bold mb-2">100%</div>
-                                    <p className="text-lg">NPS Score</p>
-                                    <p className="text-sm opacity-90">Promoters</p>
+                                    <div className="text-4xl font-bold text-gray-900 mb-2">100%</div>
+                                    <p className="text-lg text-gray-600">NPS Score</p>
+                                    <p className="text-sm text-gray-500">Promoters</p>
                                 </div>
                             </div>
                             
-                            <div className="mt-8 p-6 bg-white bg-opacity-20 rounded-lg">
-                                <p className="text-lg">
-                                    Obatku berhasil mencapai tingkat usability yang excellent dengan skor SUS 92.5, 
-                                    menunjukkan bahwa aplikasi sangat mudah digunakan dan user-friendly.
+                            <div className="bg-white p-6 rounded-lg border border-gray-200">
+                                <p className="text-lg text-gray-700">
+                                    Obatku achieved excellent usability with a SUS score of 92.5, 
+                                    demonstrating that the app is highly user-friendly and effective.
                                 </p>
                             </div>
                         </div>
                     </motion.div>
                 </div>
             </section>
-
-            {/* Footer */}
-            <footer className="bg-gray-900 text-white py-12">
-                <div className="max-w-6xl mx-auto px-4 text-center">
-                    <p className="text-lg">FindIT! | 2025</p>
-            </div>
-            </footer>
         </div>
     )
 }
