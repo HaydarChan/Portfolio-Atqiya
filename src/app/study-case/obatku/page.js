@@ -17,168 +17,168 @@ export default function StudyCaseObatku() {
     const interviewFindings = [
         {
             icon: Calendar,
-            text: "Pengelolaan jadwal konsumsi obat masih bergantung pada alarm manual dan bantuan orang lain",
+            text: "Medication schedule management still relies on manual alarms and help from others",
             color: "bg-blue-50 border-blue-200"
         },
         {
             icon: Users,
-            text: "Pengingat konsumsi obat bergantung pada suami, bukan diri sendiri atau sistem yang mandiri",
+            text: "Medication reminders depend on spouse, not self or independent system",
             color: "bg-blue-50 border-blue-200"
         },
         {
             icon: AlertTriangle,
-            text: "Tidak memahami risiko interaksi antar obat atau konsekuensi melewatkan dosis",
+            text: "Don't understand risks of drug interactions or consequences of missing doses",
             color: "bg-blue-50 border-blue-200"
         },
         {
             icon: Brain,
-            text: "Memilih obat berdasarkan pengalaman masa lalu dan kebiasaan, bukan saran profesional",
+            text: "Choose medications based on past experience and habits, not professional advice",
             color: "bg-blue-50 border-blue-200"
         },
         {
             icon: Clock,
-            text: "Tidak mengecek kadaluarsa secara rutin, hanya dicek saat ingin digunakan",
+            text: "Don't check expiration dates regularly, only when needed",
             color: "bg-blue-50 border-blue-200"
         }
     ];
 
     const affinityCategories = [
         {
-            title: "Pengelolaan Obat",
+            title: "Medication Management",
             color: "bg-blue-500",
             items: [
-                "Sistem pengingat eksternal sangat membantu",
-                "Memerlukan alarm khusus sebagai pengingat",
-                "Perlu aktivitas yang simpel sehingga membantu konsistensi"
+                "External reminder systems are very helpful",
+                "Need special alarms as reminders",
+                "Need simple activities to help with consistency"
             ]
         },
         {
-            title: "Swamedikasi",
+            title: "Self-Medication",
             color: "bg-pink-500",
             items: [
-                "Rasa takut lebih dominan daripada pertimbangan medis",
-                "Tidak ada sumber yang valid",
-                "Keputusan didasarkan pada kebiasaan bukan pengetahuan medis"
+                "Fear is more dominant than medical considerations",
+                "No valid sources available",
+                "Decisions based on habits rather than medical knowledge"
             ]
         },
         {
-            title: "Manajemen Stok Obat",
+            title: "Medication Stock Management",
             color: "bg-purple-500",
             items: [
-                "Tidak ada sistem klasifikasi",
-                "Tidak ada pengecekan berkala → rawan kehabisan",
-                "Potensi konsumsi obat kadaluarsa",
-                "Respon positif terhadap potensi solusi digital"
+                "No classification system",
+                "No regular checking → risk of running out",
+                "Risk of consuming expired medications",
+                "Positive response to potential digital solutions"
             ]
         },
         {
-            title: "Penggunaan Teknologi",
+            title: "Technology Usage",
             color: "bg-orange-500",
             items: [
-                "Fungsi dasar pengingat bisa menjadi fitur utama aplikasi",
-                "Dapat membantu edukasi"
+                "Basic reminder functions could be main app features",
+                "Can help with education"
             ]
         },
         {
-            title: "Kesadaran Interaksi Obat",
+            title: "Drug Interaction Awareness",
             color: "bg-teal-500",
             items: [
-                "Tidak ada sistem pemahaman yang jelas",
-                "Tingkat literasi rendah"
+                "No clear understanding system",
+                "Low literacy level"
             ]
         },
         {
-            title: "Kebiasaan Hidup Sehat",
+            title: "Healthy Living Habits",
             color: "bg-red-500",
             items: [
-                "Tidak ada kebiasaan mencatat",
-                "Motivasi rendah menjadi penghalang utama"
+                "No recording habits",
+                "Low motivation is the main barrier"
             ]
         }
     ];
 
     const statistics = [
-        { percentage: "46%", description: "Tidak berkonsultasi ke dokter saat mengidap penyakit ringan", source: "BPS, 2021" },
-        { percentage: "84,23%", description: "Masyarakat melakukan swamedikasi", source: "BPS, 2021" },
-        { percentage: "37,42%", description: "Memiliki pengetahuan kurang dalam obat", source: "Yulianti, 2023" }
+        { percentage: "46%", description: "Don't consult doctors for minor illnesses", source: "BPS, 2021" },
+        { percentage: "84.23%", description: "People practice self-medication", source: "BPS, 2021" },
+        { percentage: "37.42%", description: "Have insufficient knowledge about medications", source: "Yulianti, 2023" }
     ];
 
     const userJourneyStages = [
         {
-            stage: "Menyadari Gejala",
-            action: "Menyadari gejala",
-            tasks: ["Merasakan gejala sakit", "Memutuskan untuk swamedikasi"],
-            painPoints: "Tidak tahu obat apa yang tepat",
-            emotions: "Tidak nyaman, ingin segera sembuh",
-            opportunities: "Panduan gejala yang jelas untuk membantu keputusan swamedikasi"
+            stage: "Awareness of Symptoms",
+            action: "Recognize symptoms",
+            tasks: ["Feel sick symptoms", "Decide to self-medicate"],
+            painPoints: "Don't know which medication is appropriate",
+            emotions: "Uncomfortable, want to recover quickly",
+            opportunities: "Clear symptom guidance to help self-medication decisions"
         },
         {
-            stage: "Mencari Informasi Obat",
-            action: "Mencari informasi obat",
-            tasks: ["Mencari obat yang sesuai melalui internet, kemasan obat, atau pengalaman sebelumnya", "Membaca aturan pakai dan efek samping"],
-            painPoints: "Terlalu banyak info yang tidak jelas",
-            emotions: "Percaya, tetapi kurang yakin",
-            opportunities: "Rekomendasi obat berdasarkan gejala"
+            stage: "Searching for Medication Info",
+            action: "Search for medication information",
+            tasks: ["Search for appropriate medication through internet, medication packaging, or past experience", "Read usage instructions and side effects"],
+            painPoints: "Too much unclear information",
+            emotions: "Trusting, but not very confident",
+            opportunities: "Medication recommendations based on symptoms"
         },
         {
-            stage: "Memeriksa Stok Obat",
-            action: "Memeriksa stok obat",
-            tasks: ["Mengecek tempat penyimpanan obat di rumah"],
-            painPoints: "Tidak tahu kapan stok obat habis",
-            emotions: "Tenang jika stok ada, frustasi jika habis",
-            opportunities: "Sistem pencatatan stok obat untuk memudahkan pengecekan"
+            stage: "Checking Medication Stock",
+            action: "Check medication stock",
+            tasks: ["Check medication storage at home"],
+            painPoints: "Don't know when medication stock runs out",
+            emotions: "Calm if stock available, frustrated if out of stock",
+            opportunities: "Medication stock recording system for easier checking"
         },
         {
-            stage: "Mengonsumsi Obat",
-            action: "Mengonsumsi obat",
-            tasks: ["Mengikuti aturan pakai yang tertera di kemasan", "Mencatat waktu konsumsi obat"],
-            painPoints: "Takut salah konsumsi",
-            emotions: "Lega, sedikit khawatir akan efek samping",
-            opportunities: "Pengingat konsumsi obat agar tidak terlewat"
+            stage: "Consuming Medication",
+            action: "Consume medication",
+            tasks: ["Follow usage instructions on packaging", "Record medication consumption time"],
+            painPoints: "Afraid of wrong consumption",
+            emotions: "Relieved, slightly worried about side effects",
+            opportunities: "Medication consumption reminders to avoid missing doses"
         },
         {
-            stage: "Mengevaluasi Efek Obat",
-            action: "Mengevaluasi efek obat",
-            tasks: ["Menunggu efek obat bekerja", "Mengevaluasi apakah kondisi membaik atau butuh konsultasi dokter"],
-            painPoints: "Tidak yakin harus lanjut konsumsi ke dokter",
-            emotions: "Puas jika membaik, cemas jika tidak ada perubahan",
-            opportunities: "Notifikasi kapan harus mencari bantuan jika gejala tidak membaik"
+            stage: "Evaluating Medication Effects",
+            action: "Evaluate medication effects",
+            tasks: ["Wait for medication to take effect", "Evaluate whether condition improves or needs doctor consultation"],
+            painPoints: "Not sure whether to continue consuming or see doctor",
+            emotions: "Satisfied if improving, anxious if no change",
+            opportunities: "Notifications for when to seek help if symptoms don't improve"
         }
     ];
 
     const problemStatements = [
         {
             number: 1,
-            text: "Kesulitan mengatur jadwal konsumsi obat secara konsisten",
-            highlight: ["mengatur jadwal", "konsisten"]
+            text: "Difficulty managing medication consumption schedule consistently",
+            highlight: ["managing", "consistently"]
         },
         {
             number: 2,
-            text: "Tidak tahu informasi penting tentang obat"
+            text: "Don't know important information about medications"
         },
         {
             number: 3,
-            text: "Risiko kehabisan obat tanpa disadari sering terjadi",
-            highlight: ["kehabisan obat"]
+            text: "Risk of running out of medication without realizing it often occurs",
+            highlight: ["running out of medication"]
         }
     ];
 
     const goalStatements = [
         {
-            text: "Konsumsi obat yang Teratur, Aman, Terinformasi",
-            highlight: ["Teratur", "Aman", "Terinformasi"]
+            text: "Regular, Safe, and Informed Medication Consumption",
+            highlight: ["Regular", "Safe", "Informed"]
         },
         {
-            text: "Meningkatkan kualitas swamedikasi dengan membantu pengguna mengonsumsi obat secara tepat, aman, dan tanpa gangguan",
-            highlight: ["kualitas swamedikasi", "tanpa gangguan"]
+            text: "Improve self-medication quality by helping users consume medications correctly, safely, and without disruption",
+            highlight: ["self-medication quality", "without disruption"]
         },
         {
-            text: "Memberikan kemudahan dalam mengelola informasi, jadwal, dan stok obat secara otomatis dan terintegrasi",
-            highlight: ["kemudahan", "otomatis dan terintegrasi"]
+            text: "Provide ease in managing information, schedules, and medication stock automatically and integrated",
+            highlight: ["ease", "automatically and integrated"]
         },
         {
-            text: "Mengukur efektivitas melalui analisis kepatuhan konsumsi dan efisiensi manajemen obat pengguna",
-            highlight: ["efisiensi manajemen"]
+            text: "Measure effectiveness through analysis of consumption compliance and user medication management efficiency",
+            highlight: ["management efficiency"]
         }
     ];
 
@@ -192,13 +192,13 @@ export default function StudyCaseObatku() {
     ];
 
     const features = [
-        "Reminder Obat",
-        "Manajemen Stok Obat", 
-        "Penjadwalan Minum Obat",
-        "Kadaluarsa Obat",
-        "Efek Samping Obat",
-        "Pencarian Penyakit",
-        "Pencarian Obat"
+        "Medication Reminder",
+        "Medication Stock Management", 
+        "Medication Scheduling",
+        "Medication Expiration",
+        "Medication Side Effects",
+        "Disease Search",
+        "Medication Search"
     ];
 
     const competitorFeatures = {
@@ -212,70 +212,70 @@ export default function StudyCaseObatku() {
 
     const featureMapping = [
         {
-            feature: "Reminder Obat",
+            feature: "Medication Reminder",
             icon: "⏰",
-            description: "Pengingat otomatis untuk mengonsumsi obat sesuai jadwal",
-            userBenefit: "Membantu pengguna tidak lupa minum obat, meningkatkan kepatuhan pengobatan",
-            businessBenefit: "Meningkatkan retensi pengguna karena aplikasi menjadi bagian dari rutinitas harian"
+            description: "Automatic reminders to consume medication according to schedule",
+            userBenefit: "Helps users not forget to take medication, improves treatment compliance",
+            businessBenefit: "Increases user retention as the app becomes part of daily routine"
         },
         {
-            feature: "Manajemen Stok Obat",
+            feature: "Medication Stock Management",
             icon: "✏️",
-            description: "Fitur untuk mencatat dan memantau jumlah obat yang dimiliki pengguna",
-            userBenefit: "Memudahkan pengguna mengetahui stok obat yang tersedia dan kapan harus membeli lagi",
-            businessBenefit: "Dapat diintegrasikan dengan pembelian ulang obat, meningkatkan potensi transaksi"
+            description: "Feature to record and monitor the amount of medication users have",
+            userBenefit: "Makes it easier for users to know available medication stock and when to buy more",
+            businessBenefit: "Can be integrated with medication repurchasing, increasing transaction potential"
         },
         {
-            feature: "Penjadwalan Minum Obat",
+            feature: "Medication Scheduling",
             icon: "📋",
-            description: "Pengaturan jadwal dosis obat berdasarkan waktu dan frekuensi",
-            userBenefit: "Memberi kontrol penuh kepada pengguna dalam pengaturan waktu konsumsi obat",
-            businessBenefit: "Meningkatkan engagement melalui fitur yang bersifat personalisasi dan penting"
+            description: "Setting medication dose schedule based on time and frequency",
+            userBenefit: "Gives users full control in setting medication consumption time",
+            businessBenefit: "Increases engagement through features that are personalization and important"
         },
         {
-            feature: "Kadaluarsa Obat",
+            feature: "Medication Expiration",
             icon: "🔔",
-            description: "Pengingat kadaluarsa obat untuk menghindari konsumsi obat yang sudah tidak layak",
-            userBenefit: "Menghindari konsumsi obat kadaluarsa yang berisiko bagi kesehatan",
-            businessBenefit: "Mendorong pengguna membeli obat baru, menciptakan peluang monetisasi"
+            description: "Medication expiration reminders to avoid consuming unfit medications",
+            userBenefit: "Prevents consuming expired medications that are risky for health",
+            businessBenefit: "Encourages users to buy new medications, creating monetization opportunities"
         },
         {
-            feature: "Efek Samping Obat",
+            feature: "Medication Side Effects",
             icon: "⚠️",
-            description: "Informasi mengenai efek samping potensial dari obat tertentu",
-            userBenefit: "Membantu pengguna lebih waspada terhadap gejala dan risiko yang mungkin terjadi",
-            businessBenefit: "Meningkatkan kepercayaan pengguna terhadap aplikasi sebagai sumber informasi terpercaya"
+            description: "Information about potential side effects of certain medications",
+            userBenefit: "Helps users be more aware of symptoms and risks that may occur",
+            businessBenefit: "Increases user trust in the app as a reliable source of information"
         },
         {
-            feature: "Pencarian Penyakit",
+            feature: "Disease Search",
             icon: "🤒",
-            description: "Pencarian gejala dan kemungkinan penyakit yang terkait secara mandiri",
-            userBenefit: "Mempermudah pengguna memahami kondisi kesehatan secara cepat",
-            businessBenefit: "Menarik trafik tinggi dan memperluas cakupan pengguna dengan fitur swamedikasi"
+            description: "Search for symptoms and possible related diseases independently",
+            userBenefit: "Makes it easier for users to understand health conditions quickly",
+            businessBenefit: "Attracts high traffic and expands user coverage with self-medication features"
         },
         {
-            feature: "Pencarian Obat",
+            feature: "Medication Search",
             icon: "🔍",
-            description: "Fitur untuk mencari nama, kegunaan, dosis, dan harga obat",
-            userBenefit: "Mempermudah pengguna dalam menemukan obat yang sesuai dengan kebutuhan",
-            businessBenefit: "Bisa dikaitkan dengan layanan afiliasi atau e-commerce untuk penjualan obat"
+            description: "Feature to search for medication names, uses, dosages, and prices",
+            userBenefit: "Makes it easier for users to find medications that suit their needs",
+            businessBenefit: "Can be linked to affiliate services or e-commerce for medication sales"
         }
     ];
 
     const howMightWeQuestions = [
         {
-            question: "Menciptakan sistem manajemen obat yang sepenuhnya otomatis, sehingga pengguna tidak perlu mengingat atau mencatat secara manual?",
-            highlight: ["otomatis"],
+            question: "Create a fully automatic medication management system, so users don't need to remember or record manually?",
+            highlight: ["automatic"],
             action: "Change the status quo"
         },
         {
-            question: "Mengubah pengalaman yang \"merepotkan\" dalam mengelola obat menjadi sesuatu yang \"mudah dan menyenangkan\" melalui desain UI/UX yang lebih interaktif?",
-            highlight: ["mudah dan menyenangkan"],
+            question: "Transform the \"troublesome\" experience of managing medications into something \"easy and enjoyable\" through more interactive UI/UX design?",
+            highlight: ["easy and enjoyable"],
             action: "Remove the bad"
         },
         {
-            question: "Menghilangkan risiko pengguna melewatkan jadwal konsumsi obat dengan sistem yang secara otomatis mengingatkan sesuai waktu yang telah ditentukan?",
-            highlight: ["mengingatkan"],
+            question: "Eliminate the risk of users missing medication schedules with a system that automatically reminds them according to predetermined times?",
+            highlight: ["reminds"],
             action: "Remove the bad"
         }
     ];
@@ -283,69 +283,69 @@ export default function StudyCaseObatku() {
     const uxLaws = [
         {
             name: "Jakob's Law",
-            description: "Menggunakan UI yang umum dikenali agar menghindari waktu tambahan pengguna untuk mempelajari kerja tampilan baru.",
+            description: "Using commonly recognized UI to avoid additional time for users to learn new interface workings.",
             icon: "⚖️",
             examples: [
                 {
-                    title: "Pengingat Minum Obat",
-                    description: "Seperti sistem task/event pada app kalender",
-                    features: ["Waktu 8.00 dan 13.00", "Status 'Sudah Diminum'", "Tombol 'Konfirmasi Minum Obat'"]
+                    title: "Medication Reminder",
+                    description: "Like task/event system in calendar apps",
+                    features: ["Time 8:00 and 13:00", "Status 'Already Taken'", "Button 'Confirm Medication Taken'"]
                 },
                 {
                     title: "Chatbot",
-                    description: "Menyerupai tampilan LLM chatbot pada umumnya",
-                    features: ["Header 'Percakapan Baru'", "Pesan sapaan 'Halo, John'", "Menu hamburger"]
+                    description: "Resembles common LLM chatbot interface",
+                    features: ["Header 'New Conversation'", "Greeting message 'Hello, John'", "Hamburger menu"]
                 }
             ]
         },
         {
             name: "Progressive Disclosure",
-            description: "Mengutamakan penyajian informasi atau fitur advanced secara bertahap untuk membantu pengguna fokus pada informasi utama terlebih dahulu.",
+            description: "Prioritizing presentation of information or advanced features gradually to help users focus on main information first.",
             icon: "📊",
             examples: [
                 {
-                    title: "Detail Obat (Paracetamol)",
-                    description: "Informasi utama terlihat, detail tersembunyi",
-                    features: ["Tanggal kadaluarsa terdekat", "Stok Tersisa: 3 tablet", "Tombol 'Lihat detail >'"]
+                    title: "Medication Details (Paracetamol)",
+                    description: "Main information visible, details hidden",
+                    features: ["Nearest expiration date", "Remaining Stock: 3 tablets", "Button 'View details >'"]
                 },
                 {
-                    title: "Informasi Penyakit",
-                    description: "Tab navigasi untuk informasi bertahap",
-                    features: ["Tab: Overview, Gejala, Penyebab, Pengobatan", "Ringkasan informasi", "Detail lengkap tersembunyi"]
+                    title: "Disease Information",
+                    description: "Tab navigation for gradual information",
+                    features: ["Tabs: Overview, Symptoms, Causes, Treatment", "Information summary", "Full details hidden"]
                 }
             ]
         },
         {
             name: "Law of Proximity",
-            description: "Mengelompokkan objek yang serupa secara lebih berdekatan agar pengguna lebih mudah untuk memahami dan mengorganisasi informasi.",
+            description: "Grouping similar objects closer together so users can more easily understand and organize information.",
             icon: "📦",
             examples: [
                 {
-                    title: "Jadwal Hari Ini",
-                    description: "Kartu jadwal mengelompokkan informasi terkait",
-                    features: ["Waktu 13:00 WIB - Paracetamol", "Waktu 15:00 WIB - Antasida", "Setiap kartu berisi info lengkap"]
+                    title: "Today's Schedule",
+                    description: "Schedule cards group related information",
+                    features: ["Time 13:00 WIB - Paracetamol", "Time 15:00 WIB - Antacid", "Each card contains complete info"]
                 },
                 {
-                    title: "Pencarian Obat",
-                    description: "Hasil pencarian dikelompokkan dalam kartu",
-                    features: ["Paracetamol (500 mg) - Demam, nyeri ringan", "Obat Batuk Sirup (120 ml)", "Informasi terkait dalam satu kartu"]
+                    title: "Medication Search",
+                    description: "Search results grouped in cards",
+                    features: ["Paracetamol (500 mg) - Fever, mild pain", "Cough Syrup (120 ml)", "Related information in one card"]
                 }
             ]
         },
         {
             name: "Fitt's Law",
-            description: "Memperbesar tombol/target dan meletakkannya dekat task pengguna untuk mengurangi risiko error.",
+            description: "Enlarging buttons/targets and placing them close to user tasks to reduce error risk.",
             icon: "🎯",
             examples: [
                 {
-                    title: "Penyesuaian Kuantitas Obat",
-                    description: "Tombol besar dan mudah dijangkau",
-                    features: ["Tombol '+' dan '-' berukuran besar", "Tombol 'Simpan Perubahan' di area mudah dijangkau", "Touch-zone optimization"]
+                    title: "Medication Quantity Adjustment",
+                    description: "Large and easily accessible buttons",
+                    features: ["Large '+' and '-' buttons", "'Save Changes' button in easily accessible area", "Touch-zone optimization"]
                 },
                 {
-                    title: "Touch-zone pada Mobile",
-                    description: "Area jangkauan jari dioptimalkan",
-                    features: ["Hijau: Comfortable (mudah dijangkau)", "Kuning: Stretch (perlu peregangan)", "Merah: Hard (sulit dijangkau)"]
+                    title: "Mobile Touch-zone",
+                    description: "Finger reach area optimized",
+                    features: ["Green: Comfortable (easy to reach)", "Yellow: Stretch (needs stretching)", "Red: Hard (difficult to reach)"]
                 }
             ]
         }
@@ -357,106 +357,106 @@ export default function StudyCaseObatku() {
             sus: 78.75,
             seq: 5.8,
             nps: 100,
-            susDescription: "Hasil SUS menunjukkan bahwa aplikasi layak digunakan, namun perlu dikembangkan",
-            seqDescription: "Hasil SEQ menunjukkan bahwa aplikasi cukup mudah digunakan, namun bisa dikembangkan",
+            susDescription: "SUS results show that the app is usable, but needs development",
+            seqDescription: "SEQ results show that the app is quite easy to use, but can be developed",
             feedback: [
-                "Pop-up sukses membingungkan karena menampilkan 'Berhasil Minum Obat' padahal baru buat jadwal",
-                "Tombol pop-up kembali tidak dapat diklik",
-                "Pengguna sedikit bingung karena tombol serupa dengan halaman jadwal",
-                "Penambahan opsi untuk custom obat saat menambahkan obat ke folder"
+                "Success pop-up is confusing because it shows 'Successfully Took Medication' when just creating a schedule",
+                "Pop-up back button cannot be clicked",
+                "Users are slightly confused because the button is similar to the schedule page",
+                "Addition of option to customize medication when adding medication to folder"
             ],
-            generalFeedback: "Aplikasi dinilai bermanfaat dan potensial, namun perlu perbaikan dari sisi konsistensi UI, alur interaksi, dan kejelasan informasi agar lebih intuitif dan efisien digunakan sehari-hari."
+            generalFeedback: "The app is considered beneficial and has potential, but needs improvement in UI consistency, interaction flow, and information clarity to be more intuitive and efficient for daily use."
         },
         {
             iteration: 2,
             sus: 90,
             seq: 6,
             nps: 100,
-            susDescription: "Hasil SUS menunjukkan bahwa aplikasi sudah user-friendly dan layak gunakan",
-            seqDescription: "Hasil SEQ menunjukkan bahwa aplikasi mudah digunakan dan intuitif",
+            susDescription: "SUS results show that the app is already user-friendly and usable",
+            seqDescription: "SEQ results show that the app is easy to use and intuitive",
             feedback: [
-                "Terdapat duplikasi informasi pada bagian penyebab dan gejala, membingungkan pengguna",
-                "Pengguna tidak yakin apakah informasi dosis '500mg' berarti untuk konsumsi pribadi atau sekadar referensi",
-                "Label tombol 'Tambah Obat' dianggap tidak sesuai konteks; disarankan diubah menjadi 'Tambah Jadwal'",
-                "Layar sukses bertuliskan 'Berhasil Minum Obat' padahal konteksnya adalah penambahan jadwal membingungkan",
-                "Tombol 'Tambah Obat' terlalu mirip dengan yang ada di halaman Jadwal, membuat pengguna bingung konteksnya",
-                "Aksi 'Tambah Obat Baru di Folder' justru mengarahkan ke halaman awal Stok Obat, bukan tetap di folder yang dipilih"
+                "There is duplication of information in the causes and symptoms section, confusing users",
+                "Users are not sure if the dosage information '500mg' means for personal consumption or just reference",
+                "The 'Add Medication' button label is considered inappropriate for context; suggested to change to 'Add Schedule'",
+                "Success screen says 'Successfully Took Medication' when the context is adding a schedule is confusing",
+                "The 'Add Medication' button is too similar to the one on the Schedule page, making users confused about context",
+                "The 'Add New Medication to Folder' action redirects to the initial Medication Stock page, not staying in the selected folder"
             ],
-            generalFeedback: "Secara keseluruhan, pengguna menyarankan penyempurnaan wording dan navigasi untuk meningkatkan kejelasan alur, konsistensi antar halaman, dan kecocokan konteks tombol, agar aplikasi terasa lebih intuitif dan user-friendly."
+            generalFeedback: "Overall, users suggest improving wording and navigation to increase flow clarity, consistency between pages, and button context appropriateness, so the app feels more intuitive and user-friendly."
         },
         {
             iteration: 3,
             sus: 92.5,
             seq: 6.1,
             nps: 100,
-            susDescription: "Hasil SUS menunjukkan bahwa aplikasi sudah user-friendly dan layak gunakan",
-            seqDescription: "Hasil SEQ menunjukkan bahwa aplikasi mudah digunakan dan intuitif",
+            susDescription: "SUS results show that the app is already user-friendly and usable",
+            seqDescription: "SEQ results show that the app is easy to use and intuitive",
             feedback: [
-                "Untuk obat yang perlu diminum lebih dari sekali sehari, pengguna mengharapkan penambahan keterangan jumlah frekuensi minum",
-                "Label waktu sebaiknya lebih spesifik agar tidak membingungkan",
-                "Pengguna berharap ada notifikasi otomatis saat stok obat hampir habis, terutama untuk obat yang dikonsumsi rutin",
-                "Obat yang dikonsumsi secara berkala sebaiknya memiliki penanda khusus, misalnya label atau warna berbeda untuk membedakan tingkat prioritas"
+                "For medications that need to be taken more than once a day, users expect addition of frequency information",
+                "Time labels should be more specific to avoid confusion",
+                "Users hope there are automatic notifications when medication stock is running low, especially for regularly consumed medications",
+                "Medications consumed periodically should have special markers, such as different labels or colors to distinguish priority levels"
             ],
-            generalFeedback: "Obatku memiliki potensi kuat dalam membantu manajemen obat harian, namun perlu penyempurnaan dari sisi desain visual, wording, alur interaksi, dan personalisasi fitur agar lebih intuitif, menarik, dan relevan bagi pengguna aktif."
+            generalFeedback: "Obatku has strong potential in helping daily medication management, but needs improvement in visual design, wording, interaction flow, and feature personalization to be more intuitive, attractive, and relevant for active users."
         }
     ];
 
     const iterations = [
         {
             iteration: 1,
-            page: "Halaman Stok Obat",
-            problem: "Opsi obat tidak customizable, hanya bisa menambahkan yang tersedia di Database",
-            solution: "Penambahan opsi untuk menambahkan obat dari pengguna",
-            change: "Tombol 'Buat Obat Baru' ditambahkan di samping search bar"
+            page: "Medication Stock Page",
+            problem: "Medication options are not customizable, can only add those available in Database",
+            solution: "Addition of option to add medication from users",
+            change: "'Create New Medication' button added next to search bar"
         },
         {
             iteration: 2,
-            page: "Halaman Jadwal",
-            problem: "Tombol 'Tambah Obat' masih ambigu",
-            solution: "Mengubah menjadi 'Tambah Jadwal' sehingga lebih jelas",
-            change: "Label tombol diubah dari 'Tambah Obat +' menjadi '+ Tambah Jadwal'"
+            page: "Schedule Page",
+            problem: "'Add Medication' button is still ambiguous",
+            solution: "Change to 'Add Schedule' to be clearer",
+            change: "Button label changed from 'Add Medication +' to '+ Add Schedule'"
         },
         {
             iteration: 2,
-            page: "Halaman Pencarian",
-            problem: "Kurang jelas terhadap informasi varian obat",
-            solution: "Penambahan Penjelasan Varian Obat",
-            change: "Header 'Varian Paracetamol' ditambahkan di atas daftar varian obat"
+            page: "Search Page",
+            problem: "Less clear about medication variant information",
+            solution: "Addition of Medication Variant Explanation",
+            change: "'Paracetamol Variants' header added above medication variant list"
         },
         {
             iteration: 3,
-            page: "Halaman Jadwal",
-            problem: "Tidak ada keterangan apabila obat bisa diminum lebih dari satu kali per hari",
-            solution: "Penambahan Tooltip",
-            change: "Tooltip 'Kamu dapat memilih lebih dari satu waktu minum obat' ditambahkan"
+            page: "Schedule Page",
+            problem: "No information if medication can be taken more than once a day",
+            solution: "Addition of Tooltip",
+            change: "Tooltip 'You can select more than one medication time' added"
         },
         {
             iteration: 3,
-            page: "Halaman Jadwal",
-            problem: "Tidak ada opsi untuk memasukkan obat rutin",
-            solution: "Penambahan opsi menambahkan obat rutin",
-            change: "Checkbox 'Buat Sebagai Obat Rutin' ditambahkan"
+            page: "Schedule Page",
+            problem: "No option to enter regular medication",
+            solution: "Addition of option to add regular medication",
+            change: "'Create as Regular Medication' checkbox added"
         },
         {
             iteration: 3,
-            page: "Halaman Jadwal",
-            problem: "Tidak ada keterangan mengenai durasi konsumsi obat",
-            solution: "Penambahan durasi konsumsi obat",
-            change: "Informasi 'Tanggal mulai' dan 'Tanggal selesai' ditambahkan"
+            page: "Schedule Page",
+            problem: "No information about medication consumption duration",
+            solution: "Addition of medication consumption duration",
+            change: "'Start date' and 'End date' information added"
         },
         {
             iteration: 3,
-            page: "Halaman Stok Obat",
-            problem: "Ikon monoton, tidak ada penanda yang membedakan jenis obat",
-            solution: "Penggantian warna ikon untuk tiap jenis obat",
-            change: "Ikon obat diberi warna berbeda sesuai jenis (hijau untuk vitamin, oranye untuk obat batuk)"
+            page: "Medication Stock Page",
+            problem: "Monotonous icons, no markers distinguishing medication types",
+            solution: "Replacement of icon colors for each medication type",
+            change: "Medication icons given different colors according to type (green for vitamins, orange for cough medicine)"
         },
         {
             iteration: 3,
-            page: "Halaman Stok Obat",
-            problem: "Tidak ada notifikasi jika obat sudah menipis/habis",
-            solution: "Penambahan notifikasi jika obat habis dan menipis",
-            change: "Label 'Stok Menipis' dengan warna oranye ditambahkan untuk obat yang hampir habis"
+            page: "Medication Stock Page",
+            problem: "No notification if medication is running low/out",
+            solution: "Addition of notification if medication is out and running low",
+            change: "'Stock Running Low' label with orange color added for medications that are almost out"
         }
     ];
     
@@ -575,25 +575,25 @@ export default function StudyCaseObatku() {
                             </div>
                             
                             <blockquote className="text-lg text-gray-700 italic mb-6 border-l-4 border-gray-300 pl-6">
-                                "Aku sering lupa minum obat karena jadwalnya beda-beda dan sibuk di kampus. 
-                                Biasanya minum obat tanpa resep untuk sakit ringan, tapi kurang paham risiko campur obat."
+                                "I often forget to take medication because the schedule varies and I'm busy at campus. 
+                                Usually take medication without prescription for minor illnesses, but don't understand the risks of mixing medications."
                             </blockquote>
                             
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <h4 className="font-semibold text-gray-900 mb-3">Challenges</h4>
                                     <ul className="space-y-2 text-gray-600">
-                                        <li>• Sering lupa minum obat karena kesibukan</li>
-                                        <li>• Tidak ada sistem pengingat yang efektif</li>
-                                        <li>• Kurang memahami risiko interaksi obat</li>
+                                        <li>• Often forget to take medication due to busy schedule</li>
+                                        <li>• No effective reminder system</li>
+                                        <li>• Don't understand medication interaction risks</li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-900 mb-3">Goals</h4>
                                     <ul className="space-y-2 text-gray-600">
-                                        <li>• Konsisten minum obat meski jadwal padat</li>
-                                        <li>• Mendapat pengingat otomatis</li>
-                                        <li>• Tetap sehat di tengah kesibukan</li>
+                                        <li>• Consistently take medication despite busy schedule</li>
+                                        <li>• Get automatic reminders</li>
+                                        <li>• Stay healthy despite busy schedule</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1390,7 +1390,7 @@ export default function StudyCaseObatku() {
                             </div>
                         </div>
                     </motion.div>
-                </div>
+            </div>
             </section>
         </div>
     )
